@@ -1,3 +1,5 @@
+import AnimatedCounter from "./AnimatedCounter";
+
 const STATS = [
   {
     icon: (
@@ -5,7 +7,7 @@ const STATS = [
         <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
       </svg>
     ),
-    value: "+500",
+    value: <AnimatedCounter end={500} prefix="+" />,
     label: "Empresas apoyadas",
   },
   {
@@ -41,7 +43,7 @@ const STATS = [
 export default function StatsSection() {
   return (
     <section className="relative -mt-12 z-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8">
+      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 reveal-scale">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {STATS.map((stat, index) => (
             <div key={index} className="flex flex-col items-center text-center">

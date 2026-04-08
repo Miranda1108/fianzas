@@ -4,6 +4,8 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import Chatbot from "@/components/Chatbot";
+import ScrollReveal from "@/components/ScrollReveal";
 import SchemaMarkup from "@/components/SchemaMarkup";
 
 const montserrat = Montserrat({
@@ -66,6 +68,8 @@ export default function RootLayout({
         <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
+        <Chatbot />
+        <ScrollReveal />
       </body>
     </html>
   );
