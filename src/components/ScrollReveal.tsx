@@ -1,9 +1,15 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useCallback } from "react";
+import { usePathname } from "next/navigation";
 
 export default function ScrollReveal() {
-  useEffect(() => {
+  const pathname = usePathname();
+
+  const initObserver = useCallback(() => {
+    const selectors = ".reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children";
+    const elements = document.querySelectorAll(selectors);
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -15,12 +21,24 @@ export default function ScrollReveal() {
       { threshold: 0.1, rootMargin: "0px 0px -50px 0px" }
     );
 
-    document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .reveal-scale, .stagger-children").forEach((el) => {
-      observer.observe(el);
-    });
+    elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    return observer;
   }, []);
+
+  useEffect(() => {
+    // Wait for DOM to be ready after route change
+    let observer: IntersectionObserver | null = null;
+
+    const timeout = setTimeout(() => {
+      observer = initObserver();
+    }, 150);
+
+    return () => {
+      clearTimeout(timeout);
+      if (observer) observer.disconnect();
+    };
+  }, [pathname, initObserver]);
 
   return null;
 }
