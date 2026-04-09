@@ -9,6 +9,7 @@ const STATS = [
     ),
     value: <AnimatedCounter end={500} prefix="+" />,
     label: "Empresas apoyadas",
+    color: "from-secondary to-blue-400",
   },
   {
     icon: (
@@ -18,6 +19,7 @@ const STATS = [
     ),
     value: "24–72 hrs",
     label: "Tiempo promedio",
+    color: "from-cta to-emerald-400",
   },
   {
     icon: (
@@ -27,6 +29,7 @@ const STATS = [
     ),
     value: "Múltiples",
     label: "Afianzadoras",
+    color: "from-accent to-yellow-300",
   },
   {
     icon: (
@@ -37,21 +40,24 @@ const STATS = [
     ),
     value: "CDMX & EdoMex",
     label: "Cobertura",
+    color: "from-purple-500 to-secondary",
   },
 ];
 
 export default function StatsSection() {
   return (
-    <section className="relative -mt-12 z-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 reveal-scale">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+    <section className="relative -mt-16 z-20 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-5xl mx-auto glass rounded-3xl shadow-2xl border border-white/20 p-8 md:p-10 reveal-scale animate-glow">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
           {STATS.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div className="text-secondary mb-2">{stat.icon}</div>
-              <div className="font-[var(--font-heading)] font-extrabold text-xl md:text-2xl text-primary">
+            <div key={index} className="flex flex-col items-center text-center group">
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mb-3 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                {stat.icon}
+              </div>
+              <div className="font-[var(--font-heading)] font-extrabold text-2xl md:text-3xl text-primary">
                 {stat.value}
               </div>
-              <div className="text-text-muted text-sm">{stat.label}</div>
+              <div className="text-text-muted text-sm mt-1">{stat.label}</div>
             </div>
           ))}
         </div>
