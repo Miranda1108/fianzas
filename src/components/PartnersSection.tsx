@@ -1,12 +1,49 @@
-const PARTNERS = [
-  { name: "CHUBB", style: "tracking-[0.2em] font-black" },
-  { name: "SOFIMEX", style: "tracking-[0.15em] font-extrabold" },
-  { name: "DORAMA", style: "tracking-[0.12em] font-bold" },
-  { name: "AFIRME", style: "tracking-[0.18em] font-extrabold" },
-  { name: "FIANZAS DORAMA", style: "tracking-[0.08em] font-bold text-base" },
-  { name: "Aserta", style: "tracking-normal font-bold italic" },
-  { name: "LIBERTY FIANZAS", style: "tracking-[0.06em] font-extrabold text-base" },
+"use client";
+
+import { useState } from "react";
+
+type Partner = {
+  name: string;
+  slug: string;
+  ext: string;
+  /** Tailwind classes for the styled wordmark fallback */
+  style: string;
+  color: string;
+};
+
+const PARTNERS: Partner[] = [
+  { name: "CHUBB", slug: "chubb", ext: "png", style: "tracking-[0.2em] font-black", color: "#1A1A1A" },
+  { name: "SOFIMEX", slug: "sofimex", ext: "png", style: "tracking-[0.14em] font-extrabold", color: "#0A3D91" },
+  { name: "DORAMA", slug: "dorama", ext: "png", style: "tracking-[0.12em] font-bold", color: "#0E7C5A" },
+  { name: "AFIRME", slug: "afirme", ext: "png", style: "tracking-[0.16em] font-extrabold", color: "#B01E2E" },
+  { name: "ASERTA", slug: "aserta", ext: "png", style: "tracking-[0.06em] font-bold italic", color: "#E8740C" },
+  { name: "LIBERTY FIANZAS", slug: "liberty", ext: "png", style: "tracking-[0.05em] font-extrabold text-base", color: "#1A1A1A" },
 ];
+
+function PartnerLogo({ partner }: { partner: Partner }) {
+  const [hasImage, setHasImage] = useState(true);
+
+  return (
+    <div className="flex items-center justify-center h-16 px-6 py-3 bg-white rounded-xl border border-gray-border shadow-sm grayscale hover:grayscale-0 opacity-70 hover:opacity-100 hover:shadow-md transition-all duration-300">
+      {hasImage ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={`/logos/${partner.slug}.${partner.ext}`}
+          alt={`Logo ${partner.name}`}
+          className="max-h-9 max-w-[140px] w-auto object-contain"
+          onError={() => setHasImage(false)}
+        />
+      ) : (
+        <span
+          className={`text-lg md:text-xl ${partner.style} select-none whitespace-nowrap`}
+          style={{ color: partner.color }}
+        >
+          {partner.name}
+        </span>
+      )}
+    </div>
+  );
+}
 
 export default function PartnersSection() {
   return (
@@ -19,18 +56,9 @@ export default function PartnersSection() {
           Trabajamos con las principales afianzadoras autorizadas por la Comisión Nacional de Seguros y Fianzas (CNSF), garantizando el respaldo institucional de tu póliza.
         </p>
 
-        <div className="flex flex-wrap justify-center items-center gap-x-10 gap-y-6 md:gap-x-14">
+        <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6">
           {PARTNERS.map((partner) => (
-            <div
-              key={partner.name}
-              className="flex items-center justify-center h-12 px-4 grayscale hover:grayscale-0 opacity-50 hover:opacity-100 transition-all duration-300 cursor-default"
-            >
-              <span
-                className={`text-navy text-lg md:text-xl ${partner.style} select-none whitespace-nowrap`}
-              >
-                {partner.name}
-              </span>
-            </div>
+            <PartnerLogo key={partner.slug} partner={partner} />
           ))}
         </div>
 

@@ -1,0 +1,25 @@
+LOGOS DE AFIANZADORAS
+=====================
+
+Coloca aquí los archivos de logo oficiales de cada afianzadora.
+La sección "Respaldo en el que puedes confiar" los mostrará
+automáticamente en cuanto existan estos archivos.
+
+Nombres de archivo esperados (usa PNG con fondo transparente o SVG):
+
+  chubb.png
+  sofimex.png
+  dorama.png
+  afirme.png
+  fianzas-dorama.png
+  aserta.png
+  liberty.png
+
+Si prefieres SVG, cambia la extensión en el componente
+src/components/PartnersSection.tsx (constante PARTNERS -> campo "ext").
+
+Recomendaciones:
+- Fondo transparente
+- Alto mínimo 80px (se mostrarán a ~40-48px)
+- Versión a color o monocromática (el diseño aplica escala de grises
+  con color al pasar el cursor)
