@@ -23,11 +23,22 @@ export default function Footer() {
           {/* Col 1: Logo & Social */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-brand rounded-lg flex items-center justify-center">
-                <span className="font-[var(--font-heading)] font-bold text-white text-lg">
-                  F
-                </span>
-              </div>
+              <svg className="w-9 h-9 flex-shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="fw1" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#1E3A5F" />
+                    <stop offset="100%" stopColor="#2D6CDF" />
+                  </linearGradient>
+                  <linearGradient id="fw2" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#2D6CDF" />
+                    <stop offset="100%" stopColor="#60A5FA" />
+                  </linearGradient>
+                </defs>
+                <rect width="40" height="40" rx="10" fill="white" fillOpacity="0.1" />
+                <path d="M14 6C14 6 8 12 9.5 24C10.2 29 12.5 33 16.5 36C16.5 36 12 27 13.5 18C14.2 13 14 6 14 6Z" fill="white" fillOpacity="0.3" />
+                <path d="M19 5C19 5 12.5 12 14 24C14.7 29 17 33 21 36C21 36 16.5 27 17.5 17C18.2 11 19 5 19 5Z" fill="url(#fw1)" />
+                <path d="M24 8C24 8 18.5 14 20 24C20.5 28 22 32 25.5 35C25.5 35 22 27 23 18C23.5 13 24 8 24 8Z" fill="url(#fw2)" />
+              </svg>
               <span className="font-[var(--font-heading)] font-bold text-lg text-white">
                 Fianzify
               </span>

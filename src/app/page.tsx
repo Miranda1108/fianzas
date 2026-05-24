@@ -1,5 +1,5 @@
 import HeroSection from "@/components/HeroSection";
-import StatsSection from "@/components/StatsSection";
+
 import TiposFianzasSection from "@/components/TiposFianzasSection";
 import ProcessSection from "@/components/ProcessSection";
 import CalculadoraPrima from "@/components/CalculadoraPrima";
@@ -13,7 +13,6 @@ export default function Home() {
   return (
     <>
       <HeroSection />
-      <StatsSection />
       <TiposFianzasSection />
       <ProcessSection />
       <CalculadoraPrima />

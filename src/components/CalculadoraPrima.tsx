@@ -3,28 +3,27 @@
 import { useState } from "react";
 
 export default function CalculadoraPrima() {
-  const [monto, setMonto] = useState("");
+  const [rawValue, setRawValue] = useState("");
 
-  const montoNum = parseFloat(monto.replace(/[^0-9.]/g, "")) || 0;
+  const montoNum = parseInt(rawValue, 10) || 0;
   const primaMin = montoNum * 0.01;
   const primaMax = montoNum * 0.03;
 
   const formatMXN = (n: number) =>
-    n.toLocaleString("es-MX", {
+    new Intl.NumberFormat("es-MX", {
       style: "currency",
       currency: "MXN",
       minimumFractionDigits: 0,
       maximumFractionDigits: 0,
-    });
+    }).format(n);
+
+  const displayValue = montoNum > 0
+    ? new Intl.NumberFormat("es-MX").format(montoNum)
+    : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const raw = e.target.value.replace(/[^0-9]/g, "");
-    if (raw === "") {
-      setMonto("");
-      return;
-    }
-    const num = parseInt(raw, 10);
-    setMonto(num.toLocaleString("es-MX"));
+    const digits = e.target.value.replace(/\D/g, "");
+    setRawValue(digits);
   };
 
   return (
@@ -46,13 +45,13 @@ export default function CalculadoraPrima() {
               Monto de tu contrato (MXN)
             </label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-muted font-medium">$</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-muted font-semibold text-lg">$</span>
               <input
                 type="text"
-                value={monto}
+                value={displayValue}
                 onChange={handleChange}
                 placeholder="1,500,000"
-                className="input-field pl-8 text-lg font-semibold"
+                className="input-field pl-9 text-lg font-semibold"
                 inputMode="numeric"
               />
             </div>
@@ -60,7 +59,7 @@ export default function CalculadoraPrima() {
 
           {/* Result */}
           {montoNum > 0 && (
-            <div className="bg-brand/5 border border-brand/20 rounded-xl p-6 text-center">
+            <div className="bg-brand/5 border border-brand/20 rounded-xl p-6 text-center animate-in fade-in">
               <p className="text-sm text-gray-muted mb-2">Tu prima estimada</p>
               <p className="font-[var(--font-heading)] text-2xl md:text-3xl font-bold text-brand">
                 {formatMXN(primaMin)} — {formatMXN(primaMax)}
