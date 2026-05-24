@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Fianza de Licitación | Costo y Requisitos | Grupo Afianzador MX",
-  description: "Fianza de licitación para participar en concursos públicos en CDMX y Edo. Mex. Prima desde 0.5%. Evaluación sin costo. Respuesta rápida.",
+  title: "Fianza de Licitación | Costo y Requisitos | Fianzify",
+  description: "Fianza de licitación para participar en concursos públicos. Prima desde 0.5%. Evaluación sin costo. Respuesta rápida con Fianzify.",
 };
 
 export default function FianzaLicitacion() {

@@ -2,12 +2,12 @@ export default function SchemaMarkup() {
   const localBusiness = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Grupo Afianzador MX",
+    name: "Fianzify",
     description:
-      "Especialistas en fianzas para proveedores de gobierno en CDMX y Estado de México. Fianzas de cumplimiento, anticipo, licitación y vicios ocultos.",
-    url: "https://grupoafianzadormx.com",
+      "Fianzas rápidas, claras y sin complicaciones. Fianzas de cumplimiento, arrendamiento, judiciales y administrativas en México.",
+    url: "https://fianzify.mx",
     telephone: "+525512345678",
-    email: "contacto@afianzadormx.com",
+    email: "hola@fianzify.mx",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Ciudad de México",
@@ -15,8 +15,7 @@ export default function SchemaMarkup() {
       addressCountry: "MX",
     },
     areaServed: [
-      { "@type": "State", name: "Ciudad de México" },
-      { "@type": "State", name: "Estado de México" },
+      { "@type": "Country", name: "México" },
     ],
     openingHours: "Mo-Fr 09:00-18:00",
     priceRange: "$$",
@@ -28,36 +27,36 @@ export default function SchemaMarkup() {
       "@type": "Service",
       name: "Fianza de Cumplimiento",
       description:
-        "Garantiza el cumplimiento total del contrato firmado con gobierno o particulares.",
-      provider: { "@type": "LocalBusiness", name: "Grupo Afianzador MX" },
-      areaServed: "CDMX y Estado de México",
+        "Garantiza el cumplimiento de obligaciones en contratos públicos o privados.",
+      provider: { "@type": "LocalBusiness", name: "Fianzify" },
+      areaServed: "México",
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Fianza de Anticipo",
+      name: "Fianza de Arrendamiento",
       description:
-        "Respalda el uso correcto del anticipo recibido para iniciar trabajos.",
-      provider: { "@type": "LocalBusiness", name: "Grupo Afianzador MX" },
-      areaServed: "CDMX y Estado de México",
+        "Protege al arrendador garantizando el cumplimiento de las obligaciones del contrato de arrendamiento.",
+      provider: { "@type": "LocalBusiness", name: "Fianzify" },
+      areaServed: "México",
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Fianza de Licitación",
+      name: "Fianza Judicial",
       description:
-        "Requisito para participar en concursos y licitaciones públicas.",
-      provider: { "@type": "LocalBusiness", name: "Grupo Afianzador MX" },
-      areaServed: "CDMX y Estado de México",
+        "Garantías requeridas en procesos judiciales como libertad caucional, pensiones alimenticias y otras obligaciones legales.",
+      provider: { "@type": "LocalBusiness", name: "Fianzify" },
+      areaServed: "México",
     },
     {
       "@context": "https://schema.org",
       "@type": "Service",
-      name: "Fianza de Vicios Ocultos",
+      name: "Fianza Administrativa",
       description:
-        "Cubre defectos posteriores a la entrega de obra por un plazo determinado.",
-      provider: { "@type": "LocalBusiness", name: "Grupo Afianzador MX" },
-      areaServed: "CDMX y Estado de México",
+        "Avala el cumplimiento de obligaciones ante autoridades administrativas, permisos y concesiones.",
+      provider: { "@type": "LocalBusiness", name: "Fianzify" },
+      areaServed: "México",
     },
   ];
 
@@ -86,7 +85,7 @@ export default function SchemaMarkup() {
         name: "¿Qué tipos de fianzas existen?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Las principales son: fianza de cumplimiento, de anticipo, de licitación y de vicios ocultos. Cada una protege un aspecto diferente del contrato.",
+          text: "Las principales son: fianza de cumplimiento, de arrendamiento, judicial y administrativa. Cada una protege un aspecto diferente de las obligaciones.",
         },
       },
       {
@@ -94,7 +93,7 @@ export default function SchemaMarkup() {
         name: "¿Cuánto tiempo tarda obtener una fianza?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Con documentación completa, el proceso puede tomar de 24 a 72 horas. En casos urgentes, es posible acelerar el trámite.",
+          text: "Con documentación completa, el proceso puede tomar menos de 2 horas. En casos complejos, de 24 a 72 horas.",
         },
       },
       {
@@ -108,6 +107,8 @@ export default function SchemaMarkup() {
     ],
   };
 
+  // Note: dangerouslySetInnerHTML is safe here because the content is
+  // hardcoded JSON schema data, not user-supplied input
   return (
     <>
       <script

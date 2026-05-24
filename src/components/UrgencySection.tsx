@@ -1,53 +1,51 @@
-export default function UrgencySection() {
+export default function CTABanner() {
   return (
-    <section className="py-16 md:py-20 bg-white">
+    <section className="bg-gradient-to-r from-navy to-navy-mid py-14 md:py-18 relative overflow-hidden reveal">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="relative bg-gradient-to-br from-primary via-primary to-secondary/80 rounded-3xl p-8 md:p-12 overflow-hidden">
-          {/* Background decorations */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full blur-2xl -translate-y-1/2 translate-x-1/3" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-accent/10 rounded-full blur-2xl translate-y-1/2 -translate-x-1/4" />
-
-          <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Left content */}
-            <div className="flex-1 text-center md:text-left">
-              <span className="inline-block text-accent font-semibold text-sm tracking-widest uppercase mb-3">Urgente</span>
-              <h2 className="font-[var(--font-heading)] text-2xl md:text-3xl font-extrabold text-white mb-3">
-                ¿Necesitas tu fianza urgente?
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          {/* Left: Icon + Text */}
+          <div className="flex items-center gap-5 flex-1">
+            {/* Clipboard icon */}
+            <div className="w-14 h-14 rounded-2xl bg-brand flex items-center justify-center flex-shrink-0">
+              <svg className="w-7 h-7 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 0 0 2.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 0 0-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 0 0 .75-.75 2.25 2.25 0 0 0-.1-.664m-5.8 0A2.251 2.251 0 0 1 13.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25ZM6.75 12h.008v.008H6.75V12Zm0 3h.008v.008H6.75V15Zm0 3h.008v.008H6.75V18Z" />
+              </svg>
+            </div>
+            <div>
+              <h2 className="font-[var(--font-heading)] font-bold text-2xl md:text-3xl text-white leading-tight">
+                Resuelve tu fianza <span className="italic text-brand-light">hoy mismo</span>
               </h2>
-              <p className="text-white/80 text-lg mb-6">
-                Atención inmediata por WhatsApp. Te respondemos en minutos.
+              <p className="text-white/70 text-sm md:text-base mt-1">
+                Evita retrasos y asegura tus contratos con el respaldo de expertos.
               </p>
-              <div className="flex flex-wrap justify-center md:justify-start gap-3">
-                {["Respuesta rápida", "Asesoría experta", "Sin compromiso"].map(
-                  (badge) => (
-                    <span
-                      key={badge}
-                      className="inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white text-sm px-4 py-2 rounded-full border border-white/10"
-                    >
-                      <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
-                      </svg>
-                      {badge}
-                    </span>
-                  )
-                )}
-              </div>
             </div>
+          </div>
 
-            {/* Right: WhatsApp icon + CTA */}
-            <div className="flex flex-col items-center gap-4">
-              <a
-                href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20necesito%20una%20fianza%20urgente%20para%20un%20contrato%20de%20gobierno.%20%C2%BFCu%C3%A1l%20es%20el%20proceso%3F"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-24 h-24 bg-cta rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300 animate-pulse-green"
+          {/* Right: Buttons */}
+          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+            <a
+              href="/#formulario"
+              className="bg-brand hover:bg-brand-dark text-white rounded-xl px-7 py-3.5 font-semibold transition-colors duration-200 inline-flex items-center justify-center gap-2 text-sm"
+            >
+              Cotizar mi fianza
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+
+            <a
+              href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20necesito%20una%20fianza%20urgente%20para%20un%20contrato%20de%20gobierno.%20%C2%BFCu%C3%A1l%20es%20el%20proceso%3F"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-whatsapp rounded-xl inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-sm"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="currentColor"
+                viewBox="0 0 24 24"
               >
-                <svg className="w-14 h-14 text-white" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-                </svg>
-              </a>
-              <span className="text-white/60 text-xs font-medium">Toca para contactar</span>
-            </div>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+              </svg>
+              WhatsApp ahora
+            </a>
           </div>
         </div>
       </div>

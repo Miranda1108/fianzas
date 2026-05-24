@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Fianza de Cumplimiento | Costo y Requisitos | Grupo Afianzador MX",
-  description: "Fianza de cumplimiento para contratos de gobierno en CDMX y Edo. Mex. Prima del 1% al 3%. Evaluación sin costo. Respuesta en 24-72 hrs.",
+  title: "Fianza de Cumplimiento | Costo y Requisitos | Fianzify",
+  description: "Fianza de cumplimiento para contratos públicos y privados. Prima del 1% al 3%. Evaluación sin costo. Respuesta rápida con Fianzify.",
 };
 
 export default function FianzaCumplimiento() {

@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Fianza de Vicios Ocultos | Costo y Requisitos | Grupo Afianzador MX",
-  description: "Fianza de vicios ocultos para obra pública. Cubre defectos posteriores a la entrega. Prima del 1% al 2%. Evaluación sin costo en CDMX y Edo. Mex.",
+  title: "Fianza de Vicios Ocultos | Costo y Requisitos | Fianzify",
+  description: "Fianza de vicios ocultos para obra pública. Cubre defectos posteriores a la entrega. Prima del 1% al 2%. Evaluación sin costo con Fianzify.",
 };
 
 export default function FianzaViciosOcultos() {

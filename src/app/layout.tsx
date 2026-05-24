@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Montserrat, Open_Sans } from "next/font/google";
+import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,43 +8,43 @@ import Chatbot from "@/components/Chatbot";
 import ScrollReveal from "@/components/ScrollReveal";
 import SchemaMarkup from "@/components/SchemaMarkup";
 
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["400", "600", "700", "800"],
-  display: "swap",
-});
-
-const openSans = Open_Sans({
-  variable: "--font-open-sans",
+const poppins = Poppins({
+  variable: "--font-poppins",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
-  title: "Fianzas para Licitaciones en CDMX y Estado de México | Grupo Afianzador MX",
+  title: "Fianzify | Fianzas Rápidas, Claras y Sin Complicaciones",
   description:
-    "Gestionamos fianzas de cumplimiento, anticipo y licitación para proveedores de gobierno en CDMX y Edo. Mex. Evaluación sin costo. Respuesta en 24-72 hrs. Trabajamos con múltiples afianzadoras.",
+    "Obtén tu fianza en menos de 2 horas. Asesoría personalizada, afianzadoras autorizadas en México. Fianzas de cumplimiento, arrendamiento, judiciales y administrativas.",
   keywords: [
-    "fianzas para licitaciones CDMX",
-    "fianza de cumplimiento costo México",
-    "fianza de anticipo para contrato gobierno",
-    "fianzas para proveedores de gobierno",
-    "cuánto cuesta una fianza en México",
-    "tramitar fianza rápido CDMX",
+    "fianzas México",
+    "fianza de cumplimiento",
+    "fianza de arrendamiento",
+    "fianza judicial",
+    "fianza administrativa",
+    "cotizar fianza rápido",
   ],
   openGraph: {
-    title: "Fianzas para Licitaciones CDMX | Grupo Afianzador MX",
+    title: "Fianzify | Fianzas Rápidas, Claras y Sin Complicaciones",
     description:
-      "Fianzas para proveedores de gobierno. Evaluación sin costo, múltiples afianzadoras.",
-    url: "https://grupoafianzadormx.com/",
-    siteName: "Grupo Afianzador MX",
+      "Tu fianza, rápida y sin complicaciones. Asesoría personalizada y afianzadoras autorizadas.",
+    url: "https://fianzify.mx/",
+    siteName: "Fianzify",
     locale: "es_MX",
     type: "website",
   },
   alternates: {
-    canonical: "https://grupoafianzadormx.com/",
+    canonical: "https://fianzify.mx/",
   },
   robots: {
     index: true,
@@ -60,7 +60,7 @@ export default function RootLayout({
   return (
     <html
       lang="es"
-      className={`${montserrat.variable} ${openSans.variable} antialiased`}
+      className={`${poppins.variable} ${inter.variable} antialiased`}
     >
       <body className="min-h-screen flex flex-col">
         <SchemaMarkup />

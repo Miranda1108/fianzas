@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Servicios de Fianzas | Grupo Afianzador MX",
-  description: "Servicios de gestión de fianzas para proveedores de gobierno. Fianzas de cumplimiento, anticipo, licitación y vicios ocultos en CDMX y Edo. Mex.",
+  title: "Servicios de Fianzas | Fianzify",
+  description: "Servicios de gestión de fianzas en Fianzify. Fianzas de cumplimiento, arrendamiento, judicial y administrativa en CDMX y Edo. Mex.",
 };
 
 const SERVICES = [
@@ -19,9 +19,9 @@ const SERVICES = [
     ),
   },
   {
-    href: "/fianza-de-anticipo",
-    title: "Fianza de Anticipo",
-    description: "Respalda el uso correcto del anticipo recibido para iniciar trabajos. Vigente hasta la amortización total del anticipo.",
+    href: "/fianza-de-arrendamiento",
+    title: "Fianza de Arrendamiento",
+    description: "Protege al arrendador garantizando el cumplimiento de las obligaciones del contrato de arrendamiento.",
     prima: "1% – 2.5%",
     icon: (
       <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -30,9 +30,9 @@ const SERVICES = [
     ),
   },
   {
-    href: "/fianza-de-licitacion",
-    title: "Fianza de Licitación",
-    description: "Requisito para participar en concursos y licitaciones públicas. Garantiza la seriedad de tu propuesta.",
+    href: "/fianza-judicial",
+    title: "Fianza Judicial",
+    description: "Garantías requeridas en procesos judiciales como libertad caucional, pensiones alimenticias y otras obligaciones legales.",
     prima: "0.5% – 1.5%",
     icon: (
       <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -41,9 +41,9 @@ const SERVICES = [
     ),
   },
   {
-    href: "/fianza-vicios-ocultos",
-    title: "Fianza de Vicios Ocultos",
-    description: "Cubre defectos posteriores a la entrega de obra por un plazo de 12 a 24 meses post-entrega.",
+    href: "/fianza-administrativa",
+    title: "Fianza Administrativa",
+    description: "Avala el cumplimiento de obligaciones ante autoridades administrativas, permisos y concesiones.",
     prima: "1% – 2%",
     icon: (
       <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -56,17 +56,17 @@ const SERVICES = [
 export default function ServiciosPage() {
   return (
     <>
-      <div className="bg-bg-alt border-b border-gray-100">
+      <div className="bg-gray-bg border-b border-gray-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3">
-          <nav className="text-sm text-text-muted flex items-center gap-2">
-            <Link href="/" className="hover:text-secondary transition-colors">Inicio</Link>
+          <nav className="text-sm text-gray-muted flex items-center gap-2">
+            <Link href="/" className="hover:text-brand transition-colors">Inicio</Link>
             <span>/</span>
-            <span className="text-primary font-medium">Servicios</span>
+            <span className="text-navy font-medium">Servicios</span>
           </nav>
         </div>
       </div>
 
-      <section className="bg-gradient-to-br from-primary to-primary/90 py-16 md:py-20">
+      <section className="bg-gradient-to-br from-navy to-navy/90 py-16 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="font-[var(--font-heading)] text-3xl md:text-5xl font-extrabold text-white mb-4">
             Nuestros Servicios
@@ -84,22 +84,22 @@ export default function ServiciosPage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group bg-white rounded-2xl border border-gray-100 p-8 hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="group bg-white rounded-2xl border border-gray-border p-8 hover:shadow-xl hover:shadow-black/20 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="flex items-start gap-5">
-                  <div className="w-16 h-16 bg-bg-alt rounded-2xl flex items-center justify-center text-secondary group-hover:bg-secondary group-hover:text-white transition-colors flex-shrink-0">
+                  <div className="w-16 h-16 bg-brand/20 rounded-2xl flex items-center justify-center text-brand group-hover:bg-brand group-hover:text-navy transition-colors flex-shrink-0">
                     {service.icon}
                   </div>
                   <div className="flex-1">
-                    <h2 className="font-[var(--font-heading)] font-bold text-xl text-primary mb-2 group-hover:text-secondary transition-colors">
+                    <h2 className="font-[var(--font-heading)] font-bold text-xl text-navy mb-2 group-hover:text-brand transition-colors">
                       {service.title}
                     </h2>
-                    <p className="text-text-muted text-sm leading-relaxed mb-3">{service.description}</p>
+                    <p className="text-gray-muted text-sm leading-relaxed mb-3">{service.description}</p>
                     <div className="flex items-center justify-between">
-                      <span className="text-xs text-cta font-bold bg-cta/10 px-3 py-1 rounded-full">
+                      <span className="text-xs text-whatsapp font-bold bg-whatsapp/10 px-3 py-1 rounded-full">
                         Prima: {service.prima}
                       </span>
-                      <span className="text-secondary font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+                      <span className="text-brand font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
                         Ver más
                         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                           <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />

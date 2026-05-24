@@ -2,8 +2,8 @@ import { Metadata } from "next";
 import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 
 export const metadata: Metadata = {
-  title: "Fianza de Anticipo | Costo y Requisitos | Grupo Afianzador MX",
-  description: "Fianza de anticipo para contratos de gobierno. Respalda el uso correcto del anticipo recibido. Prima del 1% al 2.5%. Evaluación sin costo.",
+  title: "Fianza de Anticipo | Costo y Requisitos | Fianzify",
+  description: "Fianza de anticipo para contratos de gobierno. Respalda el uso correcto del anticipo recibido. Prima del 1% al 2.5%. Evaluación sin costo con Fianzify.",
 };
 
 export default function FianzaAnticipo() {

@@ -3,110 +3,103 @@ import Link from "next/link";
 const FIANZA_TYPES = [
   {
     href: "/fianza-de-cumplimiento",
-    title: "Fianza de Cumplimiento",
+    title: "Cumplimiento",
     description:
-      "Garantiza el cumplimiento total del contrato firmado con gobierno o particulares.",
+      "Garantiza el cumplimiento de obligaciones en contratos públicos o privados.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
       </svg>
     ),
-    gradient: "from-blue-500 to-secondary",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&q=80",
   },
   {
-    href: "/fianza-de-anticipo",
-    title: "Fianza de Anticipo",
+    href: "/fianza-de-arrendamiento",
+    title: "Arrendamiento",
     description:
-      "Respalda el uso correcto del anticipo recibido para iniciar trabajos.",
+      "Ideal para contratos de renta y arrendamiento de inmuebles.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
       </svg>
     ),
-    gradient: "from-emerald-500 to-cta",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&q=80",
   },
   {
-    href: "/fianza-de-licitacion",
-    title: "Fianza de Licitación",
+    href: "/fianza-judicial",
+    title: "Judicial",
     description:
-      "Requisito para participar en concursos y licitaciones públicas.",
+      "Para garantizar obligaciones en procesos judiciales.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 3v17.25m0 0c-1.472 0-2.882.265-4.185.75M12 20.25c1.472 0 2.882.265 4.185.75M18.75 4.97A48.416 48.416 0 0 0 12 4.5c-2.291 0-4.545.16-6.75.47m13.5 0c1.01.143 2.01.317 3 .52m-3-.52 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.988 5.988 0 0 1-2.031.352 5.988 5.988 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L18.75 4.971Zm-16.5.52c.99-.203 1.99-.377 3-.52m0 0 2.62 10.726c.122.499-.106 1.028-.589 1.202a5.989 5.989 0 0 1-2.031.352 5.989 5.989 0 0 1-2.031-.352c-.483-.174-.711-.703-.59-1.202L5.25 4.971Z" />
       </svg>
     ),
-    gradient: "from-amber-500 to-accent",
-    image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=400&q=80",
   },
   {
-    href: "/fianza-vicios-ocultos",
-    title: "Fianza de Vicios Ocultos",
+    href: "/fianza-administrativa",
+    title: "Administrativa",
     description:
-      "Cubre defectos posteriores a la entrega de obra por un plazo determinado.",
+      "Obligaciones ante entidades y dependencias públicas.",
     icon: (
-      <svg className="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M11.42 15.17l-5.385-5.396a.5.5 0 010-.707l.707-.707a.5.5 0 01.707 0L12 12.88l4.55-4.53a.5.5 0 01.707 0l.707.707a.5.5 0 010 .707L12.127 15.17a.5.5 0 01-.707 0zM12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2z" />
+      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21" />
       </svg>
     ),
-    gradient: "from-purple-500 to-indigo-500",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=400&q=80",
   },
 ];
 
 export default function TiposFianzasSection() {
   return (
-    <section id="tipos-fianzas" className="py-16 md:py-24 bg-white relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/5 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-14 reveal">
-          <span className="inline-block text-secondary font-semibold text-sm tracking-widest uppercase mb-3">Nuestros servicios</span>
-          <h2 className="font-[var(--font-heading)] text-3xl md:text-4xl font-extrabold text-primary mb-4">
-            Tipos de Fianzas
+    <section id="tipos-fianzas" className="bg-white py-16 md:py-24">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="flex items-end justify-between mb-10 reveal">
+          <h2 className="font-[var(--font-heading)] font-semibold text-2xl md:text-3xl text-navy">
+            Tipos de fianzas
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full" />
+          <Link
+            href="/servicios"
+            className="text-brand text-sm font-medium hover:underline hidden sm:inline-flex items-center gap-1"
+          >
+            Ver todas las fianzas
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+            </svg>
+          </Link>
         </div>
 
+        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 stagger-children">
           {FIANZA_TYPES.map((fianza) => (
-            <Link
+            <div
               key={fianza.href}
-              href={fianza.href}
-              className="group card-3d bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-transparent"
+              className="card-clean p-6 flex flex-col items-center text-center"
             >
-              {/* Image */}
-              <div className="img-zoom h-40 relative">
-                <img
-                  src={fianza.image}
-                  alt={fianza.title}
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className={`absolute bottom-3 left-3 w-12 h-12 rounded-xl bg-gradient-to-br ${fianza.gradient} flex items-center justify-center text-white shadow-lg`}>
-                  {fianza.icon}
-                </div>
+              {/* Icon */}
+              <div className="w-16 h-16 rounded-2xl bg-brand/8 flex items-center justify-center text-brand mx-auto">
+                {fianza.icon}
               </div>
 
-              {/* Content */}
-              <div className="p-5">
-                <h3 className="font-[var(--font-heading)] font-bold text-lg text-primary mb-2 group-hover:text-secondary transition-colors">
-                  {fianza.title}
-                </h3>
-                <p className="text-text-muted text-sm leading-relaxed">
-                  {fianza.description}
-                </p>
-                <div className="mt-4 flex items-center text-secondary text-sm font-semibold opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-300">
-                  Ver más
-                  <svg className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                  </svg>
-                </div>
-              </div>
-            </Link>
+              {/* Title */}
+              <h3 className="font-[var(--font-heading)] font-semibold text-base text-navy mt-4">
+                {fianza.title}
+              </h3>
+
+              {/* Description */}
+              <p className="text-gray-muted text-sm mt-2 leading-relaxed">
+                {fianza.description}
+              </p>
+
+              {/* Link */}
+              <Link
+                href={fianza.href}
+                className="text-brand text-sm font-medium mt-4 hover:underline inline-flex items-center gap-1"
+              >
+                Saber más
+                <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                </svg>
+              </Link>
+            </div>
           ))}
         </div>
       </div>

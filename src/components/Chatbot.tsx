@@ -15,7 +15,7 @@ interface ChatOption {
 
 const KNOWLEDGE_BASE: Record<string, { answer: string; options?: ChatOption[] }> = {
   greeting: {
-    answer: "¡Hola! Soy el asistente virtual de **Grupo Afianzador MX**. Estoy aquí para ayudarte con información sobre fianzas para contratos de gobierno.\n\n¿En qué puedo ayudarte?",
+    answer: "¡Hola! Soy el asistente virtual de **Fianzify**. Estoy aquí para ayudarte con información sobre fianzas para contratos de gobierno.\n\n¿En qué puedo ayudarte?",
     options: [
       { label: "Tipos de fianzas", value: "tipos" },
       { label: "¿Cuánto cuesta?", value: "costos" },
@@ -24,12 +24,12 @@ const KNOWLEDGE_BASE: Record<string, { answer: string; options?: ChatOption[] }>
     ],
   },
   tipos: {
-    answer: "Gestionamos **4 tipos de fianzas** para contratos de gobierno:\n\n**1. Fianza de Cumplimiento** - Garantiza el cumplimiento total del contrato.\n\n**2. Fianza de Anticipo** - Respalda el uso correcto del anticipo recibido.\n\n**3. Fianza de Licitación** - Requisito para participar en concursos públicos.\n\n**4. Fianza de Vicios Ocultos** - Cubre defectos posteriores a la entrega de obra.\n\n¿Sobre cuál te gustaría saber más?",
+    answer: "Gestionamos **4 tipos de fianzas** para contratos de gobierno:\n\n**1. Fianza de Cumplimiento** - Garantiza el cumplimiento total del contrato.\n\n**2. Fianza de Arrendamiento** - Garantiza el cumplimiento de obligaciones en contratos de arrendamiento.\n\n**3. Fianza Judicial** - Requerida en procesos legales para garantizar el cumplimiento de resoluciones.\n\n**4. Fianza Administrativa** - Garantiza el cumplimiento de obligaciones ante dependencias gubernamentales.\n\n¿Sobre cuál te gustaría saber más?",
     options: [
       { label: "Cumplimiento", value: "cumplimiento" },
-      { label: "Anticipo", value: "anticipo" },
-      { label: "Licitación", value: "licitacion" },
-      { label: "Vicios Ocultos", value: "vicios" },
+      { label: "Arrendamiento", value: "arrendamiento" },
+      { label: "Judicial", value: "judicial" },
+      { label: "Administrativa", value: "administrativa" },
       { label: "¿Cuánto cuestan?", value: "costos" },
     ],
   },
@@ -41,24 +41,24 @@ const KNOWLEDGE_BASE: Record<string, { answer: string; options?: ChatOption[] }>
       { label: "Otros tipos de fianza", value: "tipos" },
     ],
   },
-  anticipo: {
-    answer: "**Fianza de Anticipo**\n\nRespalda el uso correcto del anticipo que te da la dependencia para iniciar trabajos.\n\n- **Prima:** 1% al 2.5%\n- **Vigencia:** Hasta amortización total del anticipo\n- **Cobertura:** Monto del anticipo otorgado\n\nSe libera conforme vas amortizando el anticipo con avances de obra.",
+  arrendamiento: {
+    answer: "**Fianza de Arrendamiento**\n\nGarantiza el cumplimiento de las obligaciones del arrendatario en contratos de arrendamiento de inmuebles o equipos.\n\n- **Prima:** 1% al 2.5%\n- **Vigencia:** Duración del contrato de arrendamiento\n- **Cobertura:** Monto pactado en el contrato\n\nIdeal para contratos de renta de oficinas, bodegas o maquinaria con dependencias de gobierno.",
     options: [
       { label: "Documentos necesarios", value: "documentos" },
       { label: "Quiero cotizar", value: "cotizar" },
       { label: "Otros tipos de fianza", value: "tipos" },
     ],
   },
-  licitacion: {
-    answer: "**Fianza de Licitación**\n\nEs obligatoria para participar en licitaciones públicas. Garantiza la seriedad de tu propuesta.\n\n- **Prima:** 0.5% al 1.5% (la más económica)\n- **Vigencia:** Durante el proceso de licitación\n- **Se devuelve** si no ganas la licitación\n\nEs la fianza con menor costo y más rápida de tramitar.",
+  judicial: {
+    answer: "**Fianza Judicial**\n\nRequerida en procesos legales para garantizar el cumplimiento de resoluciones judiciales o como garantía en litigios.\n\n- **Prima:** 1% al 3%\n- **Vigencia:** Duración del proceso judicial\n- **Aplicación:** Amparos, embargos, libertad provisional, entre otros\n\nEs fundamental contar con asesoría especializada para determinar el monto y tipo exacto.",
     options: [
       { label: "Quiero cotizar", value: "cotizar" },
       { label: "¿Qué documentos necesito?", value: "documentos" },
       { label: "Otros tipos de fianza", value: "tipos" },
     ],
   },
-  vicios: {
-    answer: "**Fianza de Vicios Ocultos**\n\nCubre defectos de construcción que aparezcan después de entregar la obra.\n\n- **Prima:** 1% al 2%\n- **Vigencia:** 12 a 24 meses post-entrega\n- **Se solicita** al momento de firmar el acta de entrega-recepción",
+  administrativa: {
+    answer: "**Fianza Administrativa**\n\nGarantiza el cumplimiento de obligaciones ante dependencias gubernamentales, como permisos, licencias o concesiones.\n\n- **Prima:** 1% al 2%\n- **Vigencia:** Según la obligación administrativa\n- **Se solicita** para trámites ante autoridades federales, estatales o municipales",
     options: [
       { label: "Quiero cotizar", value: "cotizar" },
       { label: "Documentos necesarios", value: "documentos" },
@@ -66,7 +66,7 @@ const KNOWLEDGE_BASE: Record<string, { answer: string; options?: ChatOption[] }>
     ],
   },
   costos: {
-    answer: "**¿Cuánto cuesta una fianza?**\n\nEl costo se expresa como porcentaje del monto del contrato:\n\n| Tipo | Prima |\n|---|---|\n| Cumplimiento | 1% - 3% |\n| Anticipo | 1% - 2.5% |\n| Licitación | 0.5% - 1.5% |\n| Vicios Ocultos | 1% - 2% |\n\n**Ejemplo:** Contrato de $5M MXN con prima de 1.5% = **$75,000 MXN** (pago único).\n\nEl costo exacto depende de tu perfil financiero, historial crediticio y monto del contrato.",
+    answer: "**¿Cuánto cuesta una fianza?**\n\nEl costo se expresa como porcentaje del monto del contrato:\n\n| Tipo | Prima |\n|---|---|\n| Cumplimiento | 1% - 3% |\n| Arrendamiento | 1% - 2.5% |\n| Judicial | 1% - 3% |\n| Administrativa | 1% - 2% |\n\n**Ejemplo:** Contrato de $5M MXN con prima de 1.5% = **$75,000 MXN** (pago único).\n\nEl costo exacto depende de tu perfil financiero, historial crediticio y monto del contrato.",
     options: [
       { label: "¿Qué afecta el costo?", value: "factores_costo" },
       { label: "Quiero cotizar mi fianza", value: "cotizar" },
@@ -149,9 +149,9 @@ function detectIntent(input: string): string {
   if (/hola|buenos dias|buenas tardes|saludos|hey/.test(lower)) return "greeting";
   if (/tipo|cuales|que fianza|clases/.test(lower)) return "tipos";
   if (/cumplimiento/.test(lower)) return "cumplimiento";
-  if (/anticipo/.test(lower)) return "anticipo";
-  if (/licitacion|licitar|concurso/.test(lower)) return "licitacion";
-  if (/vicios|ocultos|defectos/.test(lower)) return "vicios";
+  if (/arrendamiento|renta|alquiler/.test(lower)) return "arrendamiento";
+  if (/judicial|juicio|amparo|litigio/.test(lower)) return "judicial";
+  if (/administrativa|permiso|licencia|concesion/.test(lower)) return "administrativa";
   if (/costo|cuanto|precio|prima|cobr|pag|tar/.test(lower)) return "costos";
   if (/factor|afecta|depende|influye/.test(lower)) return "factores_costo";
   if (/documento|requisito|necesito|papeles|tramit/.test(lower)) return "documentos";
@@ -249,7 +249,7 @@ export default function Chatbot() {
         className={`fixed bottom-24 right-6 z-50 w-14 h-14 rounded-full flex items-center justify-center shadow-2xl transition-all duration-300 hover:scale-110 ${
           isOpen
             ? "bg-red-500 hover:bg-red-600"
-            : "bg-secondary hover:bg-primary"
+            : "bg-brand hover:bg-navy"
         }`}
         aria-label={isOpen ? "Cerrar chat" : "Abrir asistente virtual"}
       >
@@ -266,7 +266,7 @@ export default function Chatbot() {
 
       {/* Label when closed */}
       {!isOpen && (
-        <div className="fixed bottom-[106px] right-[84px] z-50 bg-white rounded-xl shadow-lg px-4 py-2 text-sm font-medium text-primary animate-fade-in-up hidden md:block">
+        <div className="fixed bottom-[106px] right-[84px] z-50 bg-white rounded-xl shadow-lg px-4 py-2 text-sm font-medium text-navy animate-fade-in-up hidden md:block">
           <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 w-2 h-2 bg-white rotate-45 shadow-lg" />
           ¿Necesitas ayuda?
         </div>
@@ -276,14 +276,14 @@ export default function Chatbot() {
       {isOpen && (
         <div className="fixed bottom-[168px] right-6 z-50 w-[380px] max-w-[calc(100vw-48px)] bg-white rounded-2xl shadow-2xl border border-gray-200 flex flex-col overflow-hidden animate-scale-in" style={{ height: "520px" }}>
           {/* Header */}
-          <div className="bg-gradient-to-r from-primary to-secondary p-4 flex items-center gap-3">
+          <div className="bg-gradient-to-r from-navy to-brand p-4 flex items-center gap-3">
             <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">
               <svg className="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="text-white font-bold text-sm">Grupo Afianzador MX</h3>
+              <h3 className="text-white font-bold text-sm">Fianzify</h3>
               <p className="text-white/70 text-xs flex items-center gap-1">
                 <span className="w-2 h-2 bg-green-400 rounded-full" />
                 En línea
@@ -297,14 +297,14 @@ export default function Chatbot() {
               <div key={index} className="chatbot-message-enter">
                 {msg.role === "bot" ? (
                   <div className="flex gap-2">
-                    <div className="w-7 h-7 bg-secondary rounded-full flex items-center justify-center flex-shrink-0 mt-1">
+                    <div className="w-7 h-7 bg-brand rounded-full flex items-center justify-center flex-shrink-0 mt-1">
                       <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                         <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                       </svg>
                     </div>
                     <div className="space-y-2 max-w-[85%]">
                       <div
-                        className="bg-white rounded-2xl rounded-tl-sm p-3 text-sm text-text-body leading-relaxed shadow-sm border border-gray-100"
+                        className="bg-white rounded-2xl rounded-tl-sm p-3 text-sm text-gray-text leading-relaxed shadow-sm border border-gray-100"
                         dangerouslySetInnerHTML={{ __html: formatMessage(msg.text) }}
                       />
                       {msg.options && (
@@ -313,7 +313,7 @@ export default function Chatbot() {
                             <button
                               key={i}
                               onClick={() => handleOptionClick(opt)}
-                              className="text-xs bg-white border border-secondary/30 text-secondary hover:bg-secondary hover:text-white rounded-full px-3 py-1.5 transition-all duration-200 font-medium"
+                              className="text-xs bg-white border border-brand/30 text-brand hover:bg-brand hover:text-white rounded-full px-3 py-1.5 transition-all duration-200 font-medium"
                             >
                               {opt.label}
                             </button>
@@ -324,7 +324,7 @@ export default function Chatbot() {
                   </div>
                 ) : (
                   <div className="flex justify-end">
-                    <div className="bg-secondary text-white rounded-2xl rounded-tr-sm p-3 text-sm max-w-[80%]">
+                    <div className="bg-brand text-white rounded-2xl rounded-tr-sm p-3 text-sm max-w-[80%]">
                       {msg.text}
                     </div>
                   </div>
@@ -334,7 +334,7 @@ export default function Chatbot() {
 
             {isTyping && (
               <div className="flex gap-2">
-                <div className="w-7 h-7 bg-secondary rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-7 h-7 bg-brand rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
                   </svg>
@@ -361,12 +361,12 @@ export default function Chatbot() {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Escribe tu pregunta..."
-                className="flex-1 px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent"
+                className="flex-1 px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-full text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent"
               />
               <button
                 type="submit"
                 disabled={!input.trim()}
-                className="w-10 h-10 bg-secondary hover:bg-primary rounded-full flex items-center justify-center text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="w-10 h-10 bg-brand hover:bg-navy rounded-full flex items-center justify-center text-white transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />

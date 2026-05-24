@@ -1,63 +1,65 @@
-import AnimatedCounter from "./AnimatedCounter";
-
 const STATS = [
   {
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
       </svg>
     ),
-    value: <AnimatedCounter end={500} prefix="+" />,
-    label: "Empresas apoyadas",
-    color: "from-secondary to-blue-400",
+    title: "Respuesta rápida",
+    subtitle: "Te atendemos en menos de 2 horas",
   },
   {
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
       </svg>
     ),
-    value: "24–72 hrs",
-    label: "Tiempo promedio",
-    color: "from-cta to-emerald-400",
+    title: "Afianzadoras autorizadas",
+    subtitle: "Trabajamos con instituciones formalmente autorizadas",
   },
   {
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
       </svg>
     ),
-    value: "Múltiples",
-    label: "Afianzadoras",
-    color: "from-accent to-yellow-300",
+    title: "Asesoría personalizada",
+    subtitle: "Te acompañamos en cada paso del proceso",
   },
   {
     icon: (
-      <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+      <svg className="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m2.25 0H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" />
       </svg>
     ),
-    value: "CDMX & EdoMex",
-    label: "Cobertura",
-    color: "from-purple-500 to-secondary",
+    title: "Proceso claro",
+    subtitle: "Sin letra pequeña, sin complicaciones",
   },
 ];
 
 export default function StatsSection() {
   return (
-    <section className="relative -mt-16 z-20 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto glass rounded-3xl shadow-2xl border border-white/20 p-8 md:p-10 reveal-scale animate-glow">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+    <section className="bg-white border-t border-b border-gray-border py-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 reveal-scale">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {STATS.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center text-center group">
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${stat.color} flex items-center justify-center text-white mb-3 shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+            <div
+              key={index}
+              className={`flex flex-col items-center text-center ${
+                index < STATS.length - 1
+                  ? "md:border-r md:border-gray-border"
+                  : ""
+              }`}
+            >
+              <div className="w-14 h-14 rounded-2xl bg-brand/8 flex items-center justify-center text-brand mb-3">
                 {stat.icon}
               </div>
-              <div className="font-[var(--font-heading)] font-extrabold text-2xl md:text-3xl text-primary">
-                {stat.value}
+              <div className="font-[var(--font-heading)] font-semibold text-sm text-navy">
+                {stat.title}
               </div>
-              <div className="text-text-muted text-sm mt-1">{stat.label}</div>
+              <div className="text-gray-muted text-xs mt-1">
+                {stat.subtitle}
+              </div>
             </div>
           ))}
         </div>
