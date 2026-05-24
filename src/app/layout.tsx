@@ -34,17 +34,14 @@ export const metadata: Metadata = {
     "fianza administrativa",
     "cotizar fianza rápido",
   ],
+  metadataBase: new URL("https://fianzify.mx"),
   openGraph: {
     title: "Fianzify | Fianzas Rápidas, Claras y Sin Complicaciones",
     description:
       "Tu fianza, rápida y sin complicaciones. Asesoría personalizada y afianzadoras autorizadas.",
-    url: "https://fianzify.mx/",
     siteName: "Fianzify",
     locale: "es_MX",
     type: "website",
-  },
-  alternates: {
-    canonical: "https://fianzify.mx/",
   },
   robots: {
     index: true,

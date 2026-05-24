@@ -8,22 +8,56 @@ export default function LeadFormSection() {
     empresa: "",
     telefono: "",
     tipoFianza: "",
-    descripcion: "",
+    monto: "",
+    mensaje: "",
   });
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    const message = `Hola, solicito cotización de fianza.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nTipo de fianza: ${formData.tipoFianza}\nDescripción: ${formData.descripcion}`;
+    const message = `Hola, solicito cotización de fianza.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nTipo de fianza: ${formData.tipoFianza}\nMonto del contrato: ${formData.monto}\nMensaje: ${formData.mensaje}`;
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/521XXXXXXXXXX?text=${encoded}`, "_blank");
+    setSubmitted(true);
   };
 
   const benefits = [
-    "Respuesta en menos de 2 horas",
+    "Cotización en menos de 2 horas",
     "Sin costo ni compromiso",
     "Asesoría personalizada",
-    "Múltiples opciones de afianzadoras",
+    "Emisión en 24-48 hrs con documentación completa",
   ];
+
+  if (submitted) {
+    return (
+      <section id="formulario" className="bg-white py-16 md:py-24">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="card-clean p-10">
+            <div className="w-16 h-16 bg-whatsapp/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-whatsapp" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+              </svg>
+            </div>
+            <h2 className="font-[var(--font-heading)] text-2xl font-bold text-navy mb-3">
+              ¡Recibimos tu solicitud!
+            </h2>
+            <p className="text-gray-muted text-base leading-relaxed mb-4">
+              Un asesor te contactará vía WhatsApp en menos de 2 horas.
+            </p>
+            <p className="text-gray-muted text-sm">
+              Horario de atención: Lun-Vie 9:00 - 18:00 hrs
+            </p>
+            <button
+              onClick={() => setSubmitted(false)}
+              className="mt-6 text-brand text-sm font-medium hover:underline"
+            >
+              Enviar otra solicitud
+            </button>
+          </div>
+        </div>
+      </section>
+    );
+  }
 
   return (
     <section id="formulario" className="bg-white py-16 md:py-24">
@@ -36,8 +70,8 @@ export default function LeadFormSection() {
             </h2>
             <p className="text-gray-muted text-base leading-relaxed mb-8">
               Completa el formulario y uno de nuestros asesores se pondrá en
-              contacto contigo para brindarte una cotización personalizada en
-              menos de 2 horas.
+              contacto contigo para brindarte una cotización personalizada.
+              Cotización en menos de 2 horas. Emisión en 24-48 hrs con documentación completa.
             </p>
             <ul className="space-y-4">
               {benefits.map((benefit, i) => (
@@ -72,7 +106,7 @@ export default function LeadFormSection() {
                 <input
                   type="text"
                   required
-                  placeholder="Nombre completo"
+                  placeholder="Nombre completo *"
                   value={formData.nombre}
                   onChange={(e) =>
                     setFormData({ ...formData, nombre: e.target.value })
@@ -81,20 +115,9 @@ export default function LeadFormSection() {
                 />
 
                 <input
-                  type="text"
-                  required
-                  placeholder="Empresa"
-                  value={formData.empresa}
-                  onChange={(e) =>
-                    setFormData({ ...formData, empresa: e.target.value })
-                  }
-                  className="input-field"
-                />
-
-                <input
                   type="tel"
                   required
-                  placeholder="Teléfono / WhatsApp"
+                  placeholder="WhatsApp / Teléfono *"
                   value={formData.telefono}
                   onChange={(e) =>
                     setFormData({ ...formData, telefono: e.target.value })
@@ -111,20 +134,44 @@ export default function LeadFormSection() {
                   className="input-field"
                 >
                   <option value="" disabled>
-                    Tipo de fianza
+                    Tipo de fianza *
                   </option>
                   <option value="Cumplimiento">Cumplimiento</option>
                   <option value="Arrendamiento">Arrendamiento</option>
                   <option value="Judicial">Judicial</option>
                   <option value="Administrativa">Administrativa</option>
+                  <option value="Anticipo">Anticipo</option>
+                  <option value="Licitación">Licitación</option>
+                  <option value="Vicios ocultos">Vicios ocultos</option>
                   <option value="No estoy seguro">No estoy seguro</option>
                 </select>
 
-                <textarea
-                  placeholder="Descripción breve"
-                  value={formData.descripcion}
+                <input
+                  type="text"
+                  required
+                  placeholder="Monto del contrato (MXN) *"
+                  value={formData.monto}
                   onChange={(e) =>
-                    setFormData({ ...formData, descripcion: e.target.value })
+                    setFormData({ ...formData, monto: e.target.value })
+                  }
+                  className="input-field"
+                />
+
+                <input
+                  type="text"
+                  placeholder="Nombre de la empresa (opcional)"
+                  value={formData.empresa}
+                  onChange={(e) =>
+                    setFormData({ ...formData, empresa: e.target.value })
+                  }
+                  className="input-field"
+                />
+
+                <textarea
+                  placeholder="Mensaje / contexto adicional (opcional)"
+                  value={formData.mensaje}
+                  onChange={(e) =>
+                    setFormData({ ...formData, mensaje: e.target.value })
                   }
                   rows={3}
                   className="input-field resize-none"

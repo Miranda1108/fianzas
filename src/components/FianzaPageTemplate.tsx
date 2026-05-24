@@ -56,7 +56,6 @@ export default function FianzaPageTemplate({
                 <h2 className="font-[var(--font-heading)] text-2xl font-bold text-navy mb-4">
                   ¿Qué es la {title}?
                 </h2>
-                <p className="text-gray-text leading-relaxed">{description}</p>
               </div>
 
               <div>
@@ -116,7 +115,7 @@ export default function FianzaPageTemplate({
 
               <div className="bg-gradient-to-br from-brand to-brand-dark rounded-2xl p-6 text-white">
                 <h3 className="font-[var(--font-heading)] font-bold text-lg mb-3">¿Necesitas esta fianza?</h3>
-                <p className="text-white/80 text-sm mb-5">Cotiza sin compromiso. Evaluación gratuita en 24-72 hrs.</p>
+                <p className="text-white/80 text-sm mb-5">Cotiza sin compromiso. Cotización en menos de 2 horas, emisión en 24-48 hrs.</p>
                 <a
                   href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F"
                   target="_blank"

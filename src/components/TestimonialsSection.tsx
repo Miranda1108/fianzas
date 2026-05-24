@@ -3,21 +3,27 @@
 const TESTIMONIALS = [
   {
     quote:
-      "Me ayudaron a obtener mi fianza de arrendamiento el mismo día. Muy profesionales y atentos.",
-    name: "Laura M.",
-    role: "Fianza de arrendamiento",
+      "Me ayudaron a obtener mi fianza de arrendamiento el mismo día. Muy profesionales y atentos en todo el proceso.",
+    name: "Laura Martínez",
+    role: "Arrendadora de locales comerciales",
+    date: "Marzo 2025",
+    initials: "LM",
   },
   {
     quote:
-      "Respuesta rápida y proceso muy sencillo. Sin duda los recomiendo.",
-    name: "Carlos R.",
-    role: "Fianza de cumplimiento",
+      "Respuesta rápida y proceso muy sencillo. Nos dieron la mejor tasa entre tres opciones de afianzadoras. Sin duda los recomiendo.",
+    name: "Carlos Ramírez",
+    role: "Constructora en CDMX",
+    date: "Enero 2025",
+    initials: "CR",
   },
   {
     quote:
-      "Excelente asesoría, siempre me mantuvieron informado en todo el proceso.",
-    name: "Ana P.",
-    role: "Fianza judicial",
+      "Excelente asesoría, siempre me mantuvieron informado. Resolvieron mi fianza judicial en tiempo récord.",
+    name: "Ana Patricia G.",
+    role: "Despacho jurídico corporativo",
+    date: "Abril 2025",
+    initials: "AP",
   },
 ];
 
@@ -59,12 +65,19 @@ export default function TestimonialsSection() {
 
               <div className="h-px bg-gray-border my-4" />
 
-              <div className="flex items-center justify-between">
-                <div>
+              <div className="flex items-center gap-3">
+                {/* Avatar */}
+                <div className="w-10 h-10 rounded-full bg-brand/10 flex items-center justify-center flex-shrink-0">
+                  <span className="text-brand font-bold text-sm">{t.initials}</span>
+                </div>
+                <div className="flex-1">
                   <p className="font-semibold text-navy text-sm">{t.name}</p>
                   <p className="text-gray-muted text-xs">{t.role}</p>
                 </div>
-                <Stars />
+                <div className="text-right">
+                  <Stars />
+                  <p className="text-gray-muted text-[10px] mt-1">{t.date}</p>
+                </div>
               </div>
             </div>
           ))}

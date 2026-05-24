@@ -213,7 +213,7 @@ export default function Footer() {
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col sm:flex-row justify-between items-center gap-2 text-xs text-white/50">
-          <p>&copy; 2024 Fianzify. Todos los derechos reservados.</p>
+          <p>&copy; 2025 Fianzify. Todos los derechos reservados.</p>
           <div className="flex gap-3">
             <Link
               href="/aviso-legal"
