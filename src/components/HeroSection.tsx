@@ -69,11 +69,13 @@ export default function HeroSection() {
           </p>
 
           {/* Features */}
-          <div className="flex flex-wrap gap-x-6 gap-y-3 mb-10">
+          <div className="flex flex-wrap gap-4 mb-10">
             {FEATURES.map((f) => (
-              <div key={f.label} className="flex items-center gap-2 text-white/90">
-                <span className="text-brand-light">{f.icon}</span>
-                <span className="text-sm font-medium">{f.label}</span>
+              <div key={f.label} className="flex items-center gap-2.5 text-white/90">
+                <span className="flex items-center justify-center w-11 h-11 flex-shrink-0 rounded-xl border border-white/20 bg-white/[0.07] text-brand-light">
+                  {f.icon}
+                </span>
+                <span className="text-sm font-medium leading-tight max-w-[120px]">{f.label}</span>
               </div>
             ))}
           </div>

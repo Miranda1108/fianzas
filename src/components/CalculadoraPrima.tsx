@@ -18,7 +18,7 @@ export default function CalculadoraPrima() {
     }).format(n);
 
   const displayValue = montoNum > 0
-    ? new Intl.NumberFormat("es-MX").format(montoNum)
+    ? "$" + new Intl.NumberFormat("es-MX").format(montoNum)
     : "";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -44,17 +44,14 @@ export default function CalculadoraPrima() {
             <label className="block text-sm font-medium text-navy mb-2">
               Monto de tu contrato (MXN)
             </label>
-            <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-navy font-semibold text-lg pointer-events-none">$</span>
-              <input
-                type="text"
-                value={displayValue}
-                onChange={handleChange}
-                placeholder="1,500,000"
-                className="input-field pl-10 text-lg font-semibold text-navy"
-                inputMode="numeric"
-              />
-            </div>
+            <input
+              type="text"
+              value={displayValue}
+              onChange={handleChange}
+              placeholder="$1,500,000"
+              className="input-field text-lg font-semibold text-navy"
+              inputMode="numeric"
+            />
           </div>
 
           {/* Result */}
