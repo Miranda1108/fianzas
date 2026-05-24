@@ -44,24 +44,10 @@ export default function Header() {
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
             {/* F Wing Icon */}
             <svg className="w-9 h-9 md:w-10 md:h-10 flex-shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="hw1" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#0B1F3A" />
-                  <stop offset="100%" stopColor="#1E3A5F" />
-                </linearGradient>
-                <linearGradient id="hw2" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#1E3A5F" />
-                  <stop offset="100%" stopColor="#2D6CDF" />
-                </linearGradient>
-                <linearGradient id="hw3" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stopColor="#2D6CDF" />
-                  <stop offset="100%" stopColor="#60A5FA" />
-                </linearGradient>
-              </defs>
-              <rect width="40" height="40" rx="10" fill="white" fillOpacity="0.1" />
-              <path d="M14 6C14 6 8 12 9.5 24C10.2 29 12.5 33 16.5 36C16.5 36 12 27 13.5 18C14.2 13 14 6 14 6Z" fill="url(#hw1)" />
-              <path d="M19 5C19 5 12.5 12 14 24C14.7 29 17 33 21 36C21 36 16.5 27 17.5 17C18.2 11 19 5 19 5Z" fill="url(#hw2)" />
-              <path d="M24 8C24 8 18.5 14 20 24C20.5 28 22 32 25.5 35C25.5 35 22 27 23 18C23.5 13 24 8 24 8Z" fill="url(#hw3)" />
+              <rect width="40" height="40" rx="10" fill="#0F2440" />
+              <path d="M11 8 C11 8, 8 20, 11 32 C11 32, 14 32, 14 32 C14 32, 11 20, 14 8 C14 8, 11 8, 11 8Z" fill="#1A3A5C" />
+              <path d="M16 8 C16 8, 12 20, 16 32 C16 32, 19.5 32, 19.5 32 C19.5 32, 15.5 20, 19.5 8 C19.5 8, 16 8, 16 8Z" fill="#2A5A8F" />
+              <path d="M22 8 C22 8, 17 20, 22 32 C22 32, 26 32, 26 32 C26 32, 21 20, 26 8 C26 8, 22 8, 22 8Z" fill="#3D7AC7" />
             </svg>
             <div className="flex flex-col">
               <span className="font-[var(--font-heading)] text-xl md:text-2xl font-bold tracking-tight leading-none">

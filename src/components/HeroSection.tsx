@@ -33,48 +33,22 @@ const FEATURES = [
 export default function HeroSection() {
   return (
     <section className="relative bg-navy min-h-[600px] lg:min-h-[700px] flex items-center overflow-hidden">
-      {/* Background image simulation with CSS */}
+      {/* Real building photo background */}
       <div
         className="absolute inset-0 z-0"
         style={{
-          background: `
-            linear-gradient(135deg, rgba(11,31,58,0.92) 0%, rgba(30,58,95,0.85) 50%, rgba(11,31,58,0.95) 100%),
-            linear-gradient(45deg, #0B1F3A 0%, #1E3A5F 30%, #2D6CDF 60%, #1E3A5F 100%)
-          `,
+          backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
         }}
       />
-      {/* Geometric overlay for depth */}
-      <div className="absolute inset-0 z-0 opacity-[0.07]">
-        <div className="absolute top-0 right-0 w-full h-full"
-          style={{
-            backgroundImage: `
-              linear-gradient(30deg, transparent 40%, rgba(45,108,223,0.3) 40%, rgba(45,108,223,0.3) 41%, transparent 41%),
-              linear-gradient(-30deg, transparent 40%, rgba(45,108,223,0.2) 40%, rgba(45,108,223,0.2) 41%, transparent 41%),
-              linear-gradient(60deg, transparent 60%, rgba(96,165,250,0.15) 60%, rgba(96,165,250,0.15) 61%, transparent 61%)
-            `,
-            backgroundSize: '100% 100%',
-          }}
-        />
-      </div>
-      {/* Building silhouettes */}
-      <div className="absolute bottom-0 right-0 w-full h-full z-0 opacity-[0.08]">
-        <svg className="absolute bottom-0 right-0 w-full h-[60%]" viewBox="0 0 1440 400" preserveAspectRatio="none" fill="white">
-          <rect x="50" y="120" width="80" height="280" rx="2" />
-          <rect x="140" y="80" width="60" height="320" rx="2" />
-          <rect x="210" y="160" width="70" height="240" rx="2" />
-          <rect x="320" y="40" width="90" height="360" rx="2" />
-          <rect x="420" y="100" width="70" height="300" rx="2" />
-          <rect x="500" y="60" width="80" height="340" rx="2" />
-          <rect x="600" y="140" width="60" height="260" rx="2" />
-          <rect x="700" y="20" width="100" height="380" rx="2" />
-          <rect x="810" y="90" width="70" height="310" rx="2" />
-          <rect x="900" y="50" width="90" height="350" rx="2" />
-          <rect x="1000" y="110" width="80" height="290" rx="2" />
-          <rect x="1100" y="30" width="70" height="370" rx="2" />
-          <rect x="1180" y="80" width="100" height="320" rx="2" />
-          <rect x="1300" y="60" width="80" height="340" rx="2" />
-        </svg>
-      </div>
+      {/* Dark overlay */}
+      <div
+        className="absolute inset-0 z-[1]"
+        style={{
+          background: `linear-gradient(135deg, rgba(11,31,58,0.92) 0%, rgba(11,31,58,0.80) 40%, rgba(30,58,95,0.75) 100%)`,
+        }}
+      />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 w-full">
@@ -83,7 +57,7 @@ export default function HeroSection() {
           <h1 className="font-[var(--font-heading)] text-4xl md:text-5xl lg:text-[58px] font-bold leading-[1.08] text-white mb-6">
             Tu fianza,
             <br />
-            <em className="text-brand-light not-italic font-bold italic">rápida</em> y sin
+            <em className="text-brand-light not-italic font-bold italic">rápida</em>{" "}y sin
             <br />
             complicaciones
           </h1>

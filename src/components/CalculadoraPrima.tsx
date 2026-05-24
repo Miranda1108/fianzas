@@ -45,13 +45,13 @@ export default function CalculadoraPrima() {
               Monto de tu contrato (MXN)
             </label>
             <div className="relative">
-              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-muted font-semibold text-lg">$</span>
+              <span className="absolute left-4 top-1/2 -translate-y-1/2 text-navy font-semibold text-lg pointer-events-none">$</span>
               <input
                 type="text"
                 value={displayValue}
                 onChange={handleChange}
                 placeholder="1,500,000"
-                className="input-field pl-9 text-lg font-semibold"
+                className="input-field pl-10 text-lg font-semibold text-navy"
                 inputMode="numeric"
               />
             </div>
