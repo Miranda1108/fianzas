@@ -93,7 +93,7 @@ export default function SchemaMarkup() {
         name: "¿Cuánto tiempo tarda obtener una fianza?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Con documentación completa, el proceso puede tomar menos de 2 horas. En casos complejos, de 24 a 72 horas.",
+          text: "La cotización toma menos de 2 horas. La emisión de la fianza se realiza en 24 a 48 horas con documentación completa.",
         },
       },
       {

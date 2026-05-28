@@ -12,12 +12,13 @@ type Partner = {
 };
 
 const PARTNERS: Partner[] = [
-  { name: "CHUBB", slug: "chubb", ext: "png", style: "tracking-[0.2em] font-black", color: "#1A1A1A" },
-  { name: "SOFIMEX", slug: "sofimex", ext: "png", style: "tracking-[0.14em] font-extrabold", color: "#0A3D91" },
-  { name: "DORAMA", slug: "dorama", ext: "png", style: "tracking-[0.12em] font-bold", color: "#0E7C5A" },
-  { name: "AFIRME", slug: "afirme", ext: "png", style: "tracking-[0.16em] font-extrabold", color: "#B01E2E" },
-  { name: "ASERTA", slug: "aserta", ext: "png", style: "tracking-[0.06em] font-bold italic", color: "#E8740C" },
-  { name: "LIBERTY FIANZAS", slug: "liberty", ext: "png", style: "tracking-[0.05em] font-extrabold text-base", color: "#1A1A1A" },
+  { name: "Liberty Fianzas", slug: "liberty", ext: "png", style: "tracking-[0.02em] font-extrabold", color: "#0B1F3A" },
+  { name: "Avla Fianzas", slug: "avla", ext: "png", style: "tracking-[0.02em] font-extrabold", color: "#0B1F3A" },
+  { name: "Atlas Fianzas", slug: "atlas", ext: "png", style: "tracking-[0.02em] font-extrabold", color: "#0B1F3A" },
+  { name: "Berkley Fianzas", slug: "berkley", ext: "png", style: "tracking-[0.02em] font-extrabold", color: "#0B1F3A" },
+  { name: "Fianzas Mapfre", slug: "mapfre", ext: "png", style: "tracking-[0.02em] font-extrabold", color: "#0B1F3A" },
+  { name: "Fianzas Sofimex", slug: "sofimex", ext: "png", style: "tracking-[0.02em] font-extrabold", color: "#0B1F3A" },
+  { name: "Fianzas Chubb", slug: "chubb", ext: "png", style: "tracking-[0.02em] font-extrabold", color: "#0B1F3A" },
 ];
 
 function PartnerLogo({ partner }: { partner: Partner }) {

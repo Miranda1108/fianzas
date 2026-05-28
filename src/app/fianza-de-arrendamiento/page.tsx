@@ -29,6 +29,25 @@ export default function FianzaArrendamiento() {
       coverage="Monto equivalente a meses de renta"
       duration="Vigencia del contrato de arrendamiento"
       costRange="1% – 3%"
+      useCases={[
+        "Inquilinos a quienes el arrendador les pide una garantía en lugar del depósito.",
+        "Arrendadores que quieren respaldo profesional sin inmovilizar el capital del inquilino.",
+        "Contratos de renta de locales comerciales, oficinas o vivienda.",
+      ]}
+      faqs={[
+        {
+          q: "¿La fianza reemplaza el depósito en garantía?",
+          a: "Sí. Sustituye el depósito tradicional: el inquilino no inmoviliza uno o varios meses de renta y el arrendador conserva un respaldo formal ante incumplimientos.",
+        },
+        {
+          q: "¿Qué cubre exactamente?",
+          a: "Renta no pagada, daños al inmueble y el incumplimiento de las obligaciones del contrato, hasta el monto contratado.",
+        },
+        {
+          q: "¿Cuánto cuesta?",
+          a: "La prima va del 1% al 3% del monto garantizado. Cotización en menos de 2 horas, sin compromiso.",
+        },
+      ]}
     />
   );
 }

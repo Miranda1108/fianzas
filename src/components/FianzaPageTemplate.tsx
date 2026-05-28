@@ -8,6 +8,8 @@ interface FianzaPageProps {
   coverage: string;
   duration: string;
   costRange: string;
+  useCases?: string[];
+  faqs?: { q: string; a: string }[];
 }
 
 export default function FianzaPageTemplate({
@@ -18,6 +20,8 @@ export default function FianzaPageTemplate({
   coverage,
   duration,
   costRange,
+  useCases,
+  faqs,
 }: FianzaPageProps) {
   return (
     <>
@@ -56,6 +60,13 @@ export default function FianzaPageTemplate({
                 <h2 className="font-[var(--font-heading)] text-2xl font-bold text-navy mb-4">
                   ¿Qué es la {title}?
                 </h2>
+                <p className="text-gray-text leading-relaxed">{description}</p>
+                <p className="text-gray-text leading-relaxed mt-4">
+                  En Fianzify te acompañamos en todo el proceso: evaluamos tu caso, te
+                  conectamos con la afianzadora más conveniente y gestionamos la emisión
+                  con respaldo legal. <strong>Cotización en menos de 2 horas y emisión en
+                  24-48 horas</strong> con documentación completa, sin trámites complicados.
+                </p>
               </div>
 
               <div>
@@ -91,6 +102,46 @@ export default function FianzaPageTemplate({
                   ))}
                 </ul>
               </div>
+
+              {/* Casos de uso */}
+              {useCases && useCases.length > 0 && (
+                <div>
+                  <h2 className="font-[var(--font-heading)] text-2xl font-bold text-navy mb-4">
+                    ¿Cuándo se necesita?
+                  </h2>
+                  <ul className="space-y-3">
+                    {useCases.map((uc, i) => (
+                      <li key={i} className="flex items-start gap-3">
+                        <span className="w-6 h-6 bg-brand/10 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                          <svg className="w-3.5 h-3.5 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                          </svg>
+                        </span>
+                        <span className="text-gray-text">{uc}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {/* FAQ */}
+              {faqs && faqs.length > 0 && (
+                <div>
+                  <h2 className="font-[var(--font-heading)] text-2xl font-bold text-navy mb-4">
+                    Preguntas frecuentes
+                  </h2>
+                  <div className="space-y-4">
+                    {faqs.map((faq, i) => (
+                      <div key={i} className="border border-gray-border rounded-xl p-5">
+                        <h3 className="font-[var(--font-heading)] font-semibold text-navy mb-2">
+                          {faq.q}
+                        </h3>
+                        <p className="text-gray-text text-sm leading-relaxed">{faq.a}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </div>
 
             {/* Sidebar */}

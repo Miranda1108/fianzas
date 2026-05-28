@@ -30,6 +30,25 @@ export default function FianzaAnticipo() {
       coverage="Monto del anticipo"
       duration="Hasta amortización total"
       costRange="1% – 2.5%"
+      useCases={[
+        "Contratistas de obra pública que reciben un anticipo para arrancar trabajos.",
+        "Proveedores de servicios al gobierno con pago adelantado en el contrato.",
+        "Proyectos donde la dependencia exige garantizar la correcta aplicación del anticipo.",
+      ]}
+      faqs={[
+        {
+          q: "¿Por qué me piden una fianza de anticipo?",
+          a: "Cuando una dependencia te entrega dinero por adelantado, exige esta fianza para asegurarse de que el recurso se use en el contrato y se amortice conforme avanza la obra.",
+        },
+        {
+          q: "¿Por cuánto se emite?",
+          a: "Generalmente por el 100% del monto del anticipo recibido. Se va amortizando conforme presentas estimaciones de avance.",
+        },
+        {
+          q: "¿Cuánto tarda la emisión?",
+          a: "Cotización en menos de 2 horas y emisión en 24-48 horas con la documentación completa.",
+        },
+      ]}
     />
   );
 }

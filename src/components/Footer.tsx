@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const SERVICES = [
   { href: "/fianza-de-cumplimiento", label: "Cumplimiento" },
@@ -23,18 +24,15 @@ export default function Footer() {
           {/* Col 1: Logo & Social */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <svg className="w-9 h-9 flex-shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                  <linearGradient id="fGradF" x1="0" y1="0" x2="1" y2="1">
-                    <stop offset="0%" stopColor="#2D6CDF" />
-                    <stop offset="100%" stopColor="#60A5FA" />
-                  </linearGradient>
-                </defs>
-                <rect width="40" height="40" rx="9" fill="white" />
-                <path d="M12 10 H18 V30 H12 Z" fill="#0B1F3A" />
-                <path d="M12 10 H30 L25 15 H12 Z" fill="#0B1F3A" />
-                <path d="M12 17.5 H27 L22 22.5 H12 Z" fill="url(#fGradF)" />
-              </svg>
+              <span className="w-9 h-9 flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-1">
+                <Image
+                  src="/logos/fianzify.png"
+                  alt="Fianzify"
+                  width={36}
+                  height={36}
+                  className="w-full h-full object-contain"
+                />
+              </span>
               <span className="font-[var(--font-heading)] font-bold text-lg text-white">
                 Fianzify
               </span>
@@ -197,13 +195,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/aviso-legal" className="text-sm text-white/70 hover:text-white transition-colors">
+                <Link href="/terminos-y-condiciones" className="text-sm text-white/70 hover:text-white transition-colors">
                   Términos y condiciones
-                </Link>
-              </li>
-              <li>
-                <Link href="/politica-privacidad" className="text-sm text-white/70 hover:text-white transition-colors">
-                  Política de privacidad
                 </Link>
               </li>
             </ul>
@@ -223,17 +216,17 @@ export default function Footer() {
           <p>&copy; 2025 Fianzify. Todos los derechos reservados.</p>
           <div className="flex gap-3">
             <Link
-              href="/aviso-legal"
+              href="/terminos-y-condiciones"
               className="hover:text-white transition-colors"
             >
-              Aviso legal
+              Términos y condiciones
             </Link>
             <span>|</span>
             <Link
-              href="/politica-privacidad"
+              href="/aviso-privacidad"
               className="hover:text-white transition-colors"
             >
-              Política de privacidad
+              Aviso de privacidad
             </Link>
           </div>
         </div>

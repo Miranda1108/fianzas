@@ -81,7 +81,7 @@ const KNOWLEDGE_BASE: Record<string, { answer: string; options?: ChatOption[] }>
     ],
   },
   documentos: {
-    answer: "**Documentos necesarios para cotizar:**\n\n1. Contrato fuente o fallo de adjudicación\n2. Acta constitutiva de la empresa\n3. INE del representante legal\n4. Constancia de situación fiscal vigente\n5. Estados financieros (último ejercicio + parciales)\n6. Declaración anual con acuse\n7. Cédula profesional del contador\n\n**Nota:** Para montos > $2M MXN puede requerirse garantía inmobiliaria.\n\nCon documentación completa, el trámite toma **24 a 72 horas**.",
+    answer: "**Documentos necesarios para cotizar:**\n\n1. Contrato fuente o fallo de adjudicación\n2. Acta constitutiva de la empresa\n3. INE del representante legal\n4. Constancia de situación fiscal vigente\n5. Estados financieros (último ejercicio + parciales)\n6. Declaración anual con acuse\n7. Cédula profesional del contador\n\n**Nota:** Para montos > $2M MXN puede requerirse garantía inmobiliaria.\n\nCotización en menos de 2 horas; emisión en **24 a 48 horas** con documentación completa.",
     options: [
       { label: "Quiero cotizar ahora", value: "cotizar" },
       { label: "¿Y si mi Buró no es perfecto?", value: "buro" },
@@ -97,7 +97,7 @@ const KNOWLEDGE_BASE: Record<string, { answer: string; options?: ChatOption[] }>
     ],
   },
   tiempo: {
-    answer: "**Tiempos de trámite:**\n\n- **Caso estándar:** 24 a 72 horas con documentación completa\n- **Caso urgente:** Mismo día o día siguiente (contactar por WhatsApp)\n- **Licitación:** Generalmente el más rápido (24 hrs)\n\n**Tip:** Tener toda la documentación lista acelera significativamente el proceso. Te recomendamos iniciar el trámite en cuanto recibas el fallo o contrato.",
+    answer: "**Tiempos de trámite:**\n\n- **Cotización:** en menos de 2 horas\n- **Emisión estándar:** 24 a 48 horas con documentación completa\n- **Caso urgente:** mismo día o día siguiente (contactar por WhatsApp)\n\n**Tip:** Tener toda la documentación lista acelera significativamente el proceso. Te recomendamos iniciar el trámite en cuanto recibas el fallo o contrato.",
     options: [
       { label: "Necesito fianza urgente", value: "urgente" },
       { label: "Ver documentos necesarios", value: "documentos" },

@@ -29,6 +29,25 @@ export default function FianzaJudicial() {
       coverage="Monto determinado por el juez"
       duration="Según resolución judicial"
       costRange="1.5% – 4%"
+      useCases={[
+        "Personas que necesitan libertad caucional o provisional bajo fianza.",
+        "Garantía de pensiones alimenticias fijadas por un juez.",
+        "Embargos precautorios, medidas cautelares o amparos que requieren caución.",
+      ]}
+      faqs={[
+        {
+          q: "¿Quién determina el monto de la fianza judicial?",
+          a: "Lo fija la autoridad judicial en la resolución de tu expediente. Nosotros emitimos la fianza por el monto exacto que el juez señala.",
+        },
+        {
+          q: "¿Qué necesito para tramitarla?",
+          a: "La resolución judicial, identificación oficial, comprobante de domicilio y los datos del expediente (número y juzgado). Te orientamos desde el primer contacto.",
+        },
+        {
+          q: "¿Qué tan rápido se emite?",
+          a: "Entendemos la urgencia de los plazos legales: cotización en menos de 2 horas y emisión en 24-48 horas con documentación completa.",
+        },
+      ]}
     />
   );
 }

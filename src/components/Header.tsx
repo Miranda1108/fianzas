@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const NAV_LINKS = [
   { href: "/", label: "Inicio" },
@@ -42,22 +43,17 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-[72px]">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 group">
-            {/* F Wing Icon */}
-            <svg className="w-9 h-9 md:w-10 md:h-10 flex-shrink-0" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="fGradH" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stopColor="#2D6CDF" />
-                  <stop offset="100%" stopColor="#60A5FA" />
-                </linearGradient>
-              </defs>
-              <rect width="40" height="40" rx="9" fill="white" />
-              {/* F stem */}
-              <path d="M12 10 H18 V30 H12 Z" fill="#0B1F3A" />
-              {/* Top arm with flag tip */}
-              <path d="M12 10 H30 L25 15 H12 Z" fill="#0B1F3A" />
-              {/* Middle arm — blue flag */}
-              <path d="M12 17.5 H27 L22 22.5 H12 Z" fill="url(#fGradH)" />
-            </svg>
+            {/* Fianzify Logo */}
+            <span className="w-9 h-9 md:w-10 md:h-10 flex-shrink-0 bg-white rounded-xl flex items-center justify-center p-1">
+              <Image
+                src="/logos/fianzify.png"
+                alt="Fianzify"
+                width={40}
+                height={40}
+                className="w-full h-full object-contain"
+                priority
+              />
+            </span>
             <div className="flex flex-col">
               <span className="font-[var(--font-heading)] text-xl md:text-2xl font-bold tracking-tight leading-none">
                 <span className="text-white">Fianz</span>

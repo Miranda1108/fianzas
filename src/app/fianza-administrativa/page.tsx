@@ -29,6 +29,25 @@ export default function FianzaAdministrativa() {
       coverage="Monto determinado por la autoridad"
       duration="Vigencia del permiso o concesión"
       costRange="1% – 3%"
+      useCases={[
+        "Empresas que tramitan permisos, licencias o concesiones ante el gobierno.",
+        "Importadores y agentes aduanales con obligaciones ante la autoridad.",
+        "Negocios que deben garantizar el cumplimiento de regulaciones ambientales o sanitarias.",
+      ]}
+      faqs={[
+        {
+          q: "¿En qué se diferencia de la fianza de cumplimiento?",
+          a: "La administrativa garantiza obligaciones ante una autoridad (permisos, concesiones, licencias), mientras que la de cumplimiento respalda un contrato de obra o servicio específico.",
+        },
+        {
+          q: "¿Quién fija el monto?",
+          a: "Lo determina la dependencia o autoridad que solicita la garantía, según el permiso o concesión de que se trate.",
+        },
+        {
+          q: "¿Cuánto tarda?",
+          a: "Cotización en menos de 2 horas y emisión en 24-48 horas con documentación completa.",
+        },
+      ]}
     />
   );
 }

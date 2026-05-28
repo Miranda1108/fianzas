@@ -2,7 +2,7 @@ import HeroSection from "@/components/HeroSection";
 
 import TiposFianzasSection from "@/components/TiposFianzasSection";
 import ProcessSection from "@/components/ProcessSection";
-import CalculadoraPrima from "@/components/CalculadoraPrima";
+import DocumentosSection from "@/components/DocumentosSection";
 import LeadFormSection from "@/components/LeadFormSection";
 import CTABanner from "@/components/UrgencySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
@@ -15,7 +15,7 @@ export default function Home() {
       <HeroSection />
       <TiposFianzasSection />
       <ProcessSection />
-      <CalculadoraPrima />
+      <DocumentosSection />
       <LeadFormSection />
       <CTABanner />
       <TestimonialsSection />
