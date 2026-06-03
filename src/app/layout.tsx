@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     "fianza administrativa",
     "cotizar fianza rápido",
   ],
-  metadataBase: new URL("https://fianzify.mx"),
+  metadataBase: new URL("https://fianzify.com"),
   openGraph: {
     title: "Fianzify | Fianzas Rápidas, Claras y Sin Complicaciones",
     description:

@@ -5,7 +5,7 @@ export default function SchemaMarkup() {
     name: "Fianzify",
     description:
       "Fianzas rápidas, claras y sin complicaciones. Fianzas de cumplimiento, arrendamiento, judiciales y administrativas en México.",
-    url: "https://fianzify.mx",
+    url: "https://fianzify.com",
     telephone: "+525512345678",
     email: "finanzifyfianzas@gmail.com",
     address: {
