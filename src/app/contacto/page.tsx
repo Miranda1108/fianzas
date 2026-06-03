@@ -124,11 +124,15 @@ export default function ContactoPage() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <select required value={formData.tipoFianza} onChange={(e) => setFormData({ ...formData, tipoFianza: e.target.value })} className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent appearance-none bg-white">
                     <option value="" disabled>Tipo de fianza</option>
+                    <option value="Anticipo">Anticipo</option>
                     <option value="Cumplimiento">Cumplimiento</option>
-                    <option value="Arrendamiento">Arrendamiento</option>
-                    <option value="Judicial">Judicial</option>
+                    <option value="Licitación / Sostenimiento de propuesta">Licitación / Sostenimiento de propuesta</option>
+                    <option value="Vicios ocultos">Vicios ocultos / buena calidad</option>
                     <option value="Administrativa">Administrativa</option>
-                    <option value="No estoy seguro">No estoy seguro</option>
+                    <option value="Judicial">Judicial</option>
+                    <option value="Arrendamiento">Arrendamiento</option>
+                    <option value="Fidelidad">Fidelidad</option>
+                    <option value="No estoy seguro">No sé cuál necesito</option>
                   </select>
                   <input type="text" placeholder="Monto del contrato" value={formData.monto} onChange={(e) => setFormData({ ...formData, monto: e.target.value })} className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent" />
                 </div>
