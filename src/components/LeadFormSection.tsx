@@ -12,10 +12,21 @@ export default function LeadFormSection() {
     tipoFianza: "",
     monto: "",
     mensaje: "",
+    website: "", // honeypot anti-spam
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Send lead by email in the background (keepalive ensures it completes
+    // even after navigation). Don't block the user on the response.
+    fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formData, source: "home" }),
+      keepalive: true,
+    }).catch(() => {});
+
     const message = `Hola, solicito cotización de fianza.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nTipo de fianza: ${formData.tipoFianza}\nMonto del contrato: ${formData.monto}\nMensaje: ${formData.mensaje}`;
     const encoded = encodeURIComponent(message);
     window.open(`https://wa.me/525659957036?text=${encoded}`, "_blank");
@@ -73,6 +84,19 @@ export default function LeadFormSection() {
           <div className="reveal-right">
             <div className="card-clean p-8">
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot: hidden field bots tend to fill */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) =>
+                    setFormData({ ...formData, website: e.target.value })
+                  }
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                />
                 <input
                   type="text"
                   required

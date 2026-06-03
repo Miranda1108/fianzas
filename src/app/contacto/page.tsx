@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function ContactoPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     nombre: "",
     empresa: "",
@@ -12,12 +14,23 @@ export default function ContactoPage() {
     tipoFianza: "",
     monto: "",
     mensaje: "",
+    website: "", // honeypot anti-spam
   });
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Send lead by email in background; don't block the user.
+    fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...formData, source: "contacto" }),
+      keepalive: true,
+    }).catch(() => {});
+
     const message = `Hola, solicito información sobre fianzas.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nEmail: ${formData.email}\nTipo de fianza: ${formData.tipoFianza}\nMonto: ${formData.monto}\nMensaje: ${formData.mensaje}`;
     window.open(`https://wa.me/525659957036?text=${encodeURIComponent(message)}`, "_blank");
+    router.push("/gracias");
   };
 
   return (
@@ -113,6 +126,17 @@ export default function ContactoPage() {
                 Envíanos un mensaje
               </h2>
               <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Honeypot: hidden field bots tend to fill */}
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={formData.website}
+                  onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                  aria-hidden="true"
+                  style={{ position: "absolute", left: "-9999px", width: 1, height: 1, opacity: 0 }}
+                />
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <input type="text" required placeholder="Nombre completo" value={formData.nombre} onChange={(e) => setFormData({ ...formData, nombre: e.target.value })} className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent" />
                   <input type="text" required placeholder="Empresa" value={formData.empresa} onChange={(e) => setFormData({ ...formData, empresa: e.target.value })} className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent" />
