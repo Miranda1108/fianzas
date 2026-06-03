@@ -35,7 +35,7 @@ export default function CostSection() {
             </ul>
 
             <a
-              href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20quiero%20saber%20cu%C3%A1nto%20cuesta%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F"
+              href="https://wa.me/525659957036?text=Hola%2C%20quiero%20saber%20cu%C3%A1nto%20cuesta%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="w-full inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white font-bold px-6 py-3.5 rounded-full transition-all duration-300 text-base shadow-md hover:shadow-lg"

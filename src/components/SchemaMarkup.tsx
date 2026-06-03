@@ -7,7 +7,7 @@ export default function SchemaMarkup() {
       "Fianzas rápidas, claras y sin complicaciones. Fianzas de cumplimiento, arrendamiento, judiciales y administrativas en México.",
     url: "https://fianzify.mx",
     telephone: "+525512345678",
-    email: "hola@fianzify.mx",
+    email: "finanzifyfianzas@gmail.com",
     address: {
       "@type": "PostalAddress",
       addressLocality: "Ciudad de México",

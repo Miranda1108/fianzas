@@ -119,7 +119,7 @@ export default function NosotrosPage() {
           </h2>
           <p className="text-white/80 mb-8">Contáctanos hoy y recibe una evaluación sin costo.</p>
           <a
-            href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F"
+            href="https://wa.me/525659957036?text=Hola%2C%20me%20interesa%20cotizar%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-whatsapp hover:bg-whatsapp-hover text-white font-bold px-8 py-4 rounded-full transition-all text-lg"

@@ -222,7 +222,7 @@ export default function Chatbot() {
       simulateBotResponse("whatsapp");
       setTimeout(() => {
         window.open(
-          "https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20una%20fianza%20para%20mi%20contrato%20de%20gobierno.%20%C2%BFMe%20pueden%20apoyar%3F",
+          "https://wa.me/525659957036?text=Hola%2C%20me%20interesa%20cotizar%20una%20fianza%20para%20mi%20contrato%20de%20gobierno.%20%C2%BFMe%20pueden%20apoyar%3F",
           "_blank"
         );
       }, 1500);

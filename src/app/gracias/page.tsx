@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const WHATSAPP_URL =
-  "https://wa.me/521XXXXXXXXXX?text=Hola%2C%20acabo%20de%20enviar%20una%20solicitud%20de%20cotizaci%C3%B3n%20en%20su%20sitio.";
+  "https://wa.me/525659957036?text=Hola%2C%20acabo%20de%20enviar%20una%20solicitud%20de%20cotizaci%C3%B3n%20en%20su%20sitio.";
 
 export default function GraciasPage() {
   return (

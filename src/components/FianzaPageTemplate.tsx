@@ -168,7 +168,7 @@ export default function FianzaPageTemplate({
                 <h3 className="font-[var(--font-heading)] font-bold text-lg mb-3">¿Necesitas esta fianza?</h3>
                 <p className="text-white/80 text-sm mb-5">Cotiza sin compromiso. Cotización en menos de 2 horas, emisión en 24-48 hrs.</p>
                 <a
-                  href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20me%20interesa%20cotizar%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F"
+                  href="https://wa.me/525659957036?text=Hola%2C%20me%20interesa%20cotizar%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-2 bg-brand hover:bg-brand-dark text-white font-bold px-6 py-3 rounded-full transition-all duration-300 text-sm"

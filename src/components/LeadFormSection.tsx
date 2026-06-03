@@ -18,7 +18,7 @@ export default function LeadFormSection() {
     e.preventDefault();
     const message = `Hola, solicito cotización de fianza.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nTipo de fianza: ${formData.tipoFianza}\nMonto del contrato: ${formData.monto}\nMensaje: ${formData.mensaje}`;
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/521XXXXXXXXXX?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/525659957036?text=${encoded}`, "_blank");
     router.push("/gracias");
   };
 

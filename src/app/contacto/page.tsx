@@ -17,7 +17,7 @@ export default function ContactoPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const message = `Hola, solicito información sobre fianzas.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nEmail: ${formData.email}\nTipo de fianza: ${formData.tipoFianza}\nMonto: ${formData.monto}\nMensaje: ${formData.mensaje}`;
-    window.open(`https://wa.me/521XXXXXXXXXX?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/525659957036?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (
@@ -61,7 +61,7 @@ export default function ContactoPage() {
                     </span>
                     <div>
                       <p className="text-xs text-gray-muted">Teléfono</p>
-                      <p className="text-sm font-medium text-navy">55 1234 5678</p>
+                      <p className="text-sm font-medium text-navy">56 5995 7036</p>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
@@ -72,7 +72,7 @@ export default function ContactoPage() {
                     </span>
                     <div>
                       <p className="text-xs text-gray-muted">WhatsApp</p>
-                      <p className="text-sm font-medium text-navy">55 1234 5678</p>
+                      <p className="text-sm font-medium text-navy">56 5995 7036</p>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
@@ -83,7 +83,7 @@ export default function ContactoPage() {
                     </span>
                     <div>
                       <p className="text-xs text-gray-muted">Email</p>
-                      <p className="text-sm font-medium text-navy">hola@fianzify.mx</p>
+                      <p className="text-sm font-medium text-navy">finanzifyfianzas@gmail.com</p>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">

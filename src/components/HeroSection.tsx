@@ -1,7 +1,7 @@
 "use client";
 
 const WHATSAPP_URL =
-  "https://wa.me/521XXXXXXXXXX?text=Hola%2C%20necesito%20cotizar%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F";
+  "https://wa.me/525659957036?text=Hola%2C%20necesito%20cotizar%20una%20fianza.%20%C2%BFMe%20pueden%20apoyar%3F";
 
 const FEATURES = [
   {

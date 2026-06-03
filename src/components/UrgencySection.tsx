@@ -32,7 +32,7 @@ export default function CTABanner() {
             </a>
 
             <a
-              href="https://wa.me/521XXXXXXXXXX?text=Hola%2C%20necesito%20una%20fianza%20urgente%20para%20un%20contrato%20de%20gobierno.%20%C2%BFCu%C3%A1l%20es%20el%20proceso%3F"
+              href="https://wa.me/525659957036?text=Hola%2C%20necesito%20una%20fianza%20urgente%20para%20un%20contrato%20de%20gobierno.%20%C2%BFCu%C3%A1l%20es%20el%20proceso%3F"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp rounded-xl inline-flex items-center justify-center gap-2 px-7 py-3.5 font-semibold text-sm"
