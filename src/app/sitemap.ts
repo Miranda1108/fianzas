@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { ARTICLES } from "./blog/articles";
 
 const BASE = "https://fianzify.com";
 
@@ -25,10 +26,20 @@ const ROUTES: { path: string; priority: number; changeFrequency: MetadataRoute.S
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
-  return ROUTES.map(({ path, priority, changeFrequency }) => ({
+
+  const staticEntries = ROUTES.map(({ path, priority, changeFrequency }) => ({
     url: `${BASE}${path}`,
     lastModified,
     changeFrequency,
     priority,
   }));
+
+  const blogEntries: MetadataRoute.Sitemap = ARTICLES.map((a) => ({
+    url: `${BASE}/blog/${a.slug}`,
+    lastModified: new Date(a.dateISO),
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...blogEntries];
 }

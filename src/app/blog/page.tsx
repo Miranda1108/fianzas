@@ -1,55 +1,12 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import { ARTICLES } from "./articles";
 
 export const metadata: Metadata = {
-  title: "Blog | Fianzas en México | Fianzify",
-  description: "Artículos y guías sobre fianzas para proveedores de gobierno en México. Requisitos, costos, documentos y más.",
+  title: "Blog | Guías sobre fianzas en México | Fianzify",
+  description:
+    "Artículos y guías prácticas sobre fianzas en México: requisitos, costos, documentos y diferencias clave. Información clara para empresas y proveedores.",
 };
-
-const ARTICLES = [
-  {
-    slug: "que-es-una-fianza",
-    title: "¿Qué es una fianza y cómo funciona en México?",
-    excerpt: "Una fianza es un contrato de garantía emitido por una institución autorizada (afianzadora) que asegura el cumplimiento de obligaciones contractuales entre dos partes.",
-    category: "Guía básica",
-    date: "2 Abr 2026",
-  },
-  {
-    slug: "requisitos-fianza-cumplimiento",
-    title: "Requisitos para obtener una fianza de cumplimiento en 2026",
-    excerpt: "Conoce todos los documentos y requisitos que necesitas para tramitar tu fianza de cumplimiento ante las principales afianzadoras de México.",
-    category: "Requisitos",
-    date: "28 Mar 2026",
-  },
-  {
-    slug: "diferencia-fianza-cumplimiento-anticipo",
-    title: "Diferencia entre fianza de cumplimiento y fianza de anticipo",
-    excerpt: "Ambas fianzas son comunes en contratos de gobierno, pero cubren aspectos distintos. Te explicamos cuándo necesitas cada una.",
-    category: "Comparativa",
-    date: "20 Mar 2026",
-  },
-  {
-    slug: "como-participar-licitaciones-publicas",
-    title: "¿Cómo participar en licitaciones públicas si eres nuevo proveedor?",
-    excerpt: "Guía paso a paso para nuevos proveedores que quieren participar en licitaciones de gobierno y necesitan fianzas por primera vez.",
-    category: "Guía",
-    date: "15 Mar 2026",
-  },
-  {
-    slug: "documentos-tramitar-fianza",
-    title: "¿Qué documentos necesitas para tramitar una fianza?",
-    excerpt: "Lista completa de documentos que debes reunir para agilizar el trámite de tu fianza: acta constitutiva, estados financieros, declaraciones y más.",
-    category: "Requisitos",
-    date: "10 Mar 2026",
-  },
-  {
-    slug: "errores-comunes-tramitar-fianza",
-    title: "5 errores comunes al tramitar una fianza (y cómo evitarlos)",
-    excerpt: "Evita retrasos y rechazos en tu trámite de fianza. Te compartimos los errores más frecuentes y cómo prevenirlos.",
-    category: "Consejos",
-    date: "5 Mar 2026",
-  },
-];
 
 export default function BlogPage() {
   return (
@@ -72,7 +29,7 @@ export default function BlogPage() {
             Blog
           </h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Artículos, guías y recursos sobre fianzas para proveedores de gobierno en México
+            Guías prácticas sobre fianzas en México: requisitos, costos y todo lo que necesitas saber antes de cotizar.
           </p>
         </div>
       </section>
@@ -82,27 +39,28 @@ export default function BlogPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {ARTICLES.map((article) => (
-              <article
+              <Link
                 key={article.slug}
-                className="bg-white rounded-2xl border border-gray-border overflow-hidden hover:shadow-xl hover:shadow-md transition-shadow group"
+                href={`/blog/${article.slug}`}
+                className="bg-white rounded-2xl border border-gray-border overflow-hidden hover:shadow-xl hover:border-brand-light transition-all group flex flex-col"
               >
                 {/* Image placeholder */}
-                <div className="h-48 bg-gradient-to-br from-navy/30 to-brand/10 flex items-center justify-center">
+                <div className="h-44 bg-gradient-to-br from-navy/30 to-brand/10 flex items-center justify-center">
                   <svg className="w-16 h-16 text-brand/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
                   </svg>
                 </div>
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center gap-3 mb-3">
                     <span className="text-xs font-semibold text-brand bg-brand/10 px-3 py-1 rounded-full">
                       {article.category}
                     </span>
-                    <span className="text-xs text-gray-muted">{article.date}</span>
+                    <span className="text-xs text-gray-muted">{article.readingTime}</span>
                   </div>
                   <h2 className="font-[var(--font-heading)] font-bold text-lg text-navy mb-2 group-hover:text-brand transition-colors">
                     {article.title}
                   </h2>
-                  <p className="text-gray-muted text-sm leading-relaxed mb-4">
+                  <p className="text-gray-muted text-sm leading-relaxed mb-4 flex-1">
                     {article.excerpt}
                   </p>
                   <span className="text-brand font-semibold text-sm inline-flex items-center gap-1 group-hover:gap-2 transition-all">
@@ -112,7 +70,7 @@ export default function BlogPage() {
                     </svg>
                   </span>
                 </div>
-              </article>
+              </Link>
             ))}
           </div>
         </div>
