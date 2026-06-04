@@ -29,10 +29,17 @@ export const metadata: Metadata = {
   keywords: [
     "fianzas México",
     "fianza de cumplimiento",
+    "fianza de anticipo",
     "fianza de arrendamiento",
     "fianza judicial",
     "fianza administrativa",
+    "fianza de licitación",
+    "fianza de fidelidad",
+    "fianzas para licitaciones",
+    "fianzas para empresas",
+    "afianzadora confiable",
     "cotizar fianza rápido",
+    "qué es una fianza",
   ],
   metadataBase: new URL("https://fianzify.com"),
   openGraph: {
@@ -46,6 +53,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  verification: {
+    google: "RYDCkCZdtG9W4cZdjgIDwE86EucHif08TmMENQekeR8",
   },
 };
 
