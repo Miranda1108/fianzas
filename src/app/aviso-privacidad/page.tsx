@@ -4,6 +4,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Aviso de Privacidad | Fianzify",
   description: "Aviso de privacidad de Fianzify conforme a la LFPDPPP.",
+  openGraph: {
+    title: "Aviso de Privacidad | Fianzify",
+    description: "Aviso de privacidad de Fianzify conforme a la LFPDPPP.",
+    type: "website",
+  },
 };
 
 export default function AvisoPrivacidadPage() {

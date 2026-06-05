@@ -4,6 +4,11 @@ import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 export const metadata: Metadata = {
   title: "Fianza de Vicios Ocultos | Costo y Requisitos | Fianzify",
   description: "Fianza de vicios ocultos para obra pública. Cubre defectos posteriores a la entrega. Prima del 1% al 2%. Evaluación sin costo con Fianzify.",
+  openGraph: {
+    title: "Fianza de Vicios Ocultos | Costo y Requisitos | Fianzify",
+    description: "Fianza de vicios ocultos para obra pública. Cubre defectos posteriores a la entrega. Prima del 1% al 2%. Evaluación sin costo con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaViciosOcultos() {

@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   description:
     "Recibimos tu solicitud de cotización. Un asesor te contactará vía WhatsApp en menos de 2 horas.",
   robots: { index: false, follow: true },
+  openGraph: {
+    title: "¡Gracias! Recibimos tu solicitud | Fianzify",
+    description: "Recibimos tu solicitud de cotización. Un asesor te contactará vía WhatsApp en menos de 2 horas.",
+    type: "website",
+  },
 };
 
 const WHATSAPP_URL =

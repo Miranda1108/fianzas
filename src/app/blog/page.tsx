@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   title: "Blog | Guías sobre fianzas en México | Fianzify",
   description:
     "Artículos y guías prácticas sobre fianzas en México: requisitos, costos, documentos y diferencias clave. Información clara para empresas y proveedores.",
+  openGraph: {
+    title: "Blog | Guías sobre fianzas en México | Fianzify",
+    description: "Artículos y guías prácticas sobre fianzas en México: requisitos, costos, documentos y diferencias clave. Información clara para empresas y proveedores.",
+    type: "website",
+  },
 };
 
 export default function BlogPage() {

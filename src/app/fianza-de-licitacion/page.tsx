@@ -4,6 +4,11 @@ import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 export const metadata: Metadata = {
   title: "Fianza de Licitación | Costo y Requisitos | Fianzify",
   description: "Fianza de licitación para participar en concursos públicos. Prima desde 0.5%. Evaluación sin costo. Respuesta rápida con Fianzify.",
+  openGraph: {
+    title: "Fianza de Licitación | Costo y Requisitos | Fianzify",
+    description: "Fianza de licitación para participar en concursos públicos. Prima desde 0.5%. Evaluación sin costo. Respuesta rápida con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaLicitacion() {

@@ -4,6 +4,11 @@ import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 export const metadata: Metadata = {
   title: "Fianza Administrativa | Costo y Requisitos | Fianzify",
   description: "Fianzas administrativas para permisos, concesiones y obligaciones ante autoridades. Evaluación sin costo. Respuesta rápida con Fianzify.",
+  openGraph: {
+    title: "Fianza Administrativa | Costo y Requisitos | Fianzify",
+    description: "Fianzas administrativas para permisos, concesiones y obligaciones ante autoridades. Evaluación sin costo. Respuesta rápida con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaAdministrativa() {

@@ -3,9 +3,13 @@ import Image from "next/image";
 
 const SERVICES = [
   { href: "/fianza-de-cumplimiento", label: "Cumplimiento" },
-  { href: "/fianza-de-arrendamiento", label: "Arrendamiento" },
-  { href: "/fianza-judicial", label: "Judicial" },
+  { href: "/fianza-de-anticipo", label: "Anticipo" },
+  { href: "/fianza-de-licitacion", label: "Sostenimiento de propuesta" },
+  { href: "/fianza-vicios-ocultos", label: "Vicios ocultos" },
   { href: "/fianza-administrativa", label: "Administrativa" },
+  { href: "/fianza-judicial", label: "Judicial" },
+  { href: "/fianza-de-arrendamiento", label: "Arrendamiento" },
+  { href: "/fianza-de-fidelidad", label: "Fidelidad" },
 ];
 
 const LINKS = [

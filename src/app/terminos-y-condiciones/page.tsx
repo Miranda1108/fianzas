@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Términos y Condiciones | Fianzify",
   description:
     "Términos y condiciones de uso del sitio web y los servicios de intermediación de fianzas de Fianzify.",
+  openGraph: {
+    title: "Términos y Condiciones | Fianzify",
+    description: "Términos y condiciones de uso del sitio web y los servicios de intermediación de fianzas de Fianzify.",
+    type: "website",
+  },
 };
 
 export default function TerminosYCondicionesPage() {

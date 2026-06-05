@@ -5,6 +5,11 @@ export const metadata: Metadata = {
   title: "Fianza de Fidelidad | Costo y Requisitos | Fianzify",
   description:
     "Fianza de fidelidad para proteger a tu empresa de fraudes o daños causados por empleados de confianza. Cotización en menos de 2 horas con Fianzify.",
+  openGraph: {
+    title: "Fianza de Fidelidad | Costo y Requisitos | Fianzify",
+    description: "Fianza de fidelidad para proteger a tu empresa de fraudes o daños causados por empleados de confianza. Cotización en menos de 2 horas con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaFidelidad() {

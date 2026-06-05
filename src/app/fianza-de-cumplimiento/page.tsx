@@ -4,6 +4,11 @@ import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 export const metadata: Metadata = {
   title: "Fianza de Cumplimiento | Costo y Requisitos | Fianzify",
   description: "Fianza de cumplimiento para contratos públicos y privados. Prima del 1% al 3%. Evaluación sin costo. Respuesta rápida con Fianzify.",
+  openGraph: {
+    title: "Fianza de Cumplimiento | Costo y Requisitos | Fianzify",
+    description: "Fianza de cumplimiento para contratos públicos y privados. Prima del 1% al 3%. Evaluación sin costo. Respuesta rápida con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaCumplimiento() {

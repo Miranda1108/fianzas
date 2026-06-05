@@ -4,6 +4,11 @@ import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 export const metadata: Metadata = {
   title: "Fianza de Anticipo | Costo y Requisitos | Fianzify",
   description: "Fianza de anticipo para contratos de gobierno. Respalda el uso correcto del anticipo recibido. Prima del 1% al 2.5%. Evaluación sin costo con Fianzify.",
+  openGraph: {
+    title: "Fianza de Anticipo | Costo y Requisitos | Fianzify",
+    description: "Fianza de anticipo para contratos de gobierno. Respalda el uso correcto del anticipo recibido. Prima del 1% al 2.5%. Evaluación sin costo con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaAnticipo() {

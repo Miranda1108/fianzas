@@ -4,6 +4,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Cuánto cuesta una fianza en México 2026 | Costos, primas y factores",
   description: "Conoce el costo real de una fianza en México. Prima del 1% al 3% del monto afianzado. Factores que afectan el precio, tipos de fianza y cómo cotizar. Evaluación sin costo.",
+  openGraph: {
+    title: "Cuánto cuesta una fianza en México 2026 | Costos, primas y factores",
+    description: "Conoce el costo real de una fianza en México. Prima del 1% al 3% del monto afianzado. Factores que afectan el precio, tipos de fianza y cómo cotizar. Evaluación sin costo.",
+    type: "website",
+  },
 };
 
 const COST_TABLE = [

@@ -4,6 +4,11 @@ import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 export const metadata: Metadata = {
   title: "Fianza Judicial | Costo y Requisitos | Fianzify",
   description: "Fianzas judiciales para procesos legales. Libertad caucional, pensiones alimenticias y otras obligaciones judiciales. Evaluación sin costo con Fianzify.",
+  openGraph: {
+    title: "Fianza Judicial | Costo y Requisitos | Fianzify",
+    description: "Fianzas judiciales para procesos legales. Libertad caucional, pensiones alimenticias y otras obligaciones judiciales. Evaluación sin costo con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaJudicial() {

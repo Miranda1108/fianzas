@@ -4,6 +4,11 @@ import FianzaPageTemplate from "@/components/FianzaPageTemplate";
 export const metadata: Metadata = {
   title: "Fianza de Arrendamiento | Costo y Requisitos | Fianzify",
   description: "Fianza de arrendamiento para proteger contratos de renta. Garantiza el cumplimiento de obligaciones del arrendatario. Evaluación sin costo con Fianzify.",
+  openGraph: {
+    title: "Fianza de Arrendamiento | Costo y Requisitos | Fianzify",
+    description: "Fianza de arrendamiento para proteger contratos de renta. Garantiza el cumplimiento de obligaciones del arrendatario. Evaluación sin costo con Fianzify.",
+    type: "website",
+  },
 };
 
 export default function FianzaArrendamiento() {

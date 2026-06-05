@@ -4,6 +4,11 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Nosotros | Fianzify | Intermediario de Fianzas CDMX",
   description: "Conoce a Fianzify. Intermediarios especializados en fianzas para proveedores de gobierno en CDMX y Estado de México. +500 empresas apoyadas.",
+  openGraph: {
+    title: "Nosotros | Fianzify | Intermediario de Fianzas CDMX",
+    description: "Conoce a Fianzify. Intermediarios especializados en fianzas para proveedores de gobierno en CDMX y Estado de México. +500 empresas apoyadas.",
+    type: "website",
+  },
 };
 
 const VALUES = [
