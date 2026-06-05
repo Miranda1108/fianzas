@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { ARTICLES } from "./blog/articles";
+import { CIUDAD_SLUGS } from "./(ciudades)/ciudades";
 
 const BASE = "https://fianzify.com";
 
@@ -41,5 +42,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticEntries, ...blogEntries];
+  const ciudadEntries: MetadataRoute.Sitemap = CIUDAD_SLUGS.map((slug) => ({
+    url: `${BASE}/${slug}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
+  return [...staticEntries, ...blogEntries, ...ciudadEntries];
 }

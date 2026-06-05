@@ -20,6 +20,14 @@ const LINKS = [
   { href: "/#formulario", label: "Contacto" },
 ];
 
+const COBERTURA = [
+  { href: "/fianzas-cdmx", label: "Fianzas en CDMX" },
+  { href: "/fianzas-estado-de-mexico", label: "Fianzas en Estado de México" },
+  { href: "/fianzas-naucalpan", label: "Fianzas en Naucalpan" },
+  { href: "/fianzas-ecatepec", label: "Fianzas en Ecatepec" },
+  { href: "/fianzas-tlalnepantla", label: "Fianzas en Tlalnepantla" },
+];
+
 const INSTAGRAM_URL = "https://www.instagram.com/finanzifyfianzas.mx/";
 const FACEBOOK_URL = "https://www.facebook.com/share/18Tq1S18tU/";
 
@@ -204,6 +212,24 @@ export default function Footer() {
                 Lunes a Viernes<br />9:00 – 18:00 hrs
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* Cobertura por zona */}
+        <div className="mt-10 pt-8 border-t border-white/10">
+          <h3 className="text-white/50 uppercase tracking-wider text-xs font-semibold mb-4">
+            Cobertura
+          </h3>
+          <div className="flex flex-wrap gap-x-5 gap-y-2">
+            {COBERTURA.map((c) => (
+              <Link
+                key={c.href}
+                href={c.href}
+                className="text-sm text-white/70 hover:text-white transition-colors"
+              >
+                {c.label}
+              </Link>
+            ))}
           </div>
         </div>
       </div>
