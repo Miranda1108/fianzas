@@ -31,10 +31,10 @@ export default function StatsSection() {
 
           {/* Cobertura */}
           <div className="text-center">
-            <div className="font-[var(--font-heading)] font-bold text-2xl md:text-3xl text-brand-light leading-tight pt-2 md:pt-3">
-              CDMX<span className="text-white/40"> + </span>EdoMex
+            <div className="font-[var(--font-heading)] font-bold text-3xl md:text-4xl text-brand-light leading-tight pt-1 md:pt-2">
+              Todo México
             </div>
-            <div className="text-white/70 text-sm mt-2">Cobertura actual</div>
+            <div className="text-white/70 text-sm mt-2">Cobertura nacional</div>
           </div>
         </div>
       </div>
