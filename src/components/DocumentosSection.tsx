@@ -83,18 +83,21 @@ export default function DocumentosSection() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
           {/* Persona física */}
-          <div className="card-clean p-8">
+          <div className="card-clean p-8 flex flex-col">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center text-brand">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
                 </svg>
               </div>
-              <h3 className="font-[var(--font-heading)] font-semibold text-lg text-navy">
-                Persona física
-              </h3>
+              <div>
+                <h3 className="font-[var(--font-heading)] font-semibold text-lg text-navy leading-tight">
+                  Persona física
+                </h3>
+                <p className="text-xs text-gray-muted">5 documentos básicos</p>
+              </div>
             </div>
             <ul className="space-y-3">
               {PERSONA_FISICA.map((doc) => (
@@ -104,10 +107,28 @@ export default function DocumentosSection() {
                 </li>
               ))}
             </ul>
+
+            {/* Tip — rellena y equilibra la columna */}
+            <div className="mt-auto pt-6">
+              <div className="rounded-xl bg-brand/5 border border-brand/15 p-5">
+                <div className="flex items-start gap-3">
+                  <span className="w-9 h-9 rounded-lg bg-brand/10 flex items-center justify-center text-brand flex-shrink-0">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                    </svg>
+                  </span>
+                  <p className="text-sm text-navy/80 leading-relaxed">
+                    Como <strong>persona física</strong> el trámite suele ser más ágil.
+                    Si tienes actividad empresarial, podríamos pedirte documentación
+                    financiera adicional. Te orientamos sin compromiso.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Persona moral */}
-          <div className="card-clean p-8">
+          <div className="card-clean p-8 flex flex-col">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 rounded-xl bg-brand/10 flex items-center justify-center text-brand">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -141,33 +162,43 @@ export default function DocumentosSection() {
             </div>
 
             {/* Alerta firmas autógrafas */}
-            <div className="mt-6 rounded-xl border-l-4 border-red-500 bg-red-50 px-4 py-3">
-              <p className="text-sm text-red-800 leading-relaxed">
-                <strong>Importante:</strong> los estados financieros deben presentarse con
-                <strong> firmas autógrafas</strong> del contador y del representante legal,
-                e incluir la leyenda obligatoria "bajo protesta de decir verdad". No se aceptan firmas electrónicas.
-              </p>
+            <div className="mt-auto pt-6">
+              <div className="rounded-xl border-l-4 border-red-500 bg-red-50 px-4 py-3">
+                <p className="text-sm text-red-800 leading-relaxed">
+                  <strong>Importante:</strong> los estados financieros deben presentarse con
+                  <strong> firmas autógrafas</strong> del contador y del representante legal,
+                  e incluir la leyenda obligatoria "bajo protesta de decir verdad". No se aceptan firmas electrónicas.
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
         {/* Casos especiales */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
-          <div className="rounded-xl border-l-4 border-warning bg-amber-50 px-4 py-3">
-            <p className="text-sm text-amber-900 leading-relaxed">
-              <strong>¿Tu empresa es S.A.S.?</strong> (Sociedad por Acciones Simplificada) Háznoslo saber —
-              hay condiciones especiales para este tipo de sociedad.
-            </p>
-          </div>
-          <div className="rounded-xl border-l-4 border-red-500 bg-red-50 px-4 py-3">
-            <p className="text-sm text-red-800 leading-relaxed">
-              <strong>¿Tienes historial en Buró de Crédito?</strong> No es impedimento —
-              infórmanos desde el inicio para evaluar las mejores opciones y evitar retrasos.
-            </p>
+        <div className="mt-10 reveal">
+          <h3 className="font-[var(--font-heading)] font-semibold text-base text-navy text-center mb-1">
+            Casos especiales — decláralos al inicio
+          </h3>
+          <p className="text-gray-muted text-xs text-center mb-5 max-w-xl mx-auto">
+            No son impedimentos, pero informarnos desde el principio evita retrasos en tu trámite.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="rounded-xl border-l-4 border-warning bg-amber-50 px-5 py-4">
+              <p className="text-sm text-amber-900 leading-relaxed">
+                <strong>¿Tu empresa es S.A.S.?</strong> (Sociedad por Acciones Simplificada) Háznoslo saber —
+                hay condiciones especiales para este tipo de sociedad.
+              </p>
+            </div>
+            <div className="rounded-xl border-l-4 border-red-500 bg-red-50 px-5 py-4">
+              <p className="text-sm text-red-800 leading-relaxed">
+                <strong>¿Tienes historial en Buró de Crédito?</strong> No es impedimento —
+                infórmanos desde el inicio para evaluar las mejores opciones.
+              </p>
+            </div>
           </div>
         </div>
 
-        <div className="text-center mt-8 reveal">
+        <div className="text-center mt-10 reveal">
           <a
             href={WHATSAPP_DOCS}
             target="_blank"
