@@ -21,11 +21,15 @@ const LINKS = [
 ];
 
 const COBERTURA = [
-  { href: "/fianzas-cdmx", label: "Fianzas en CDMX" },
-  { href: "/fianzas-estado-de-mexico", label: "Fianzas en Estado de México" },
-  { href: "/fianzas-naucalpan", label: "Fianzas en Naucalpan" },
-  { href: "/fianzas-ecatepec", label: "Fianzas en Ecatepec" },
-  { href: "/fianzas-tlalnepantla", label: "Fianzas en Tlalnepantla" },
+  { href: "/fianzas-cdmx", label: "CDMX" },
+  { href: "/fianzas-estado-de-mexico", label: "Estado de México" },
+  { href: "/fianzas-guadalajara", label: "Guadalajara" },
+  { href: "/fianzas-monterrey", label: "Monterrey" },
+  { href: "/fianzas-puebla", label: "Puebla" },
+  { href: "/fianzas-queretaro", label: "Querétaro" },
+  { href: "/fianzas-naucalpan", label: "Naucalpan" },
+  { href: "/fianzas-ecatepec", label: "Ecatepec" },
+  { href: "/fianzas-tlalnepantla", label: "Tlalnepantla" },
 ];
 
 const INSTAGRAM_URL = "https://www.instagram.com/finanzifyfianzas.mx/";
@@ -218,7 +222,7 @@ export default function Footer() {
         {/* Cobertura por zona */}
         <div className="mt-10 pt-8 border-t border-white/10">
           <h3 className="text-white/50 uppercase tracking-wider text-xs font-semibold mb-4">
-            Cobertura
+            Fianzas por ciudad
           </h3>
           <div className="flex flex-wrap gap-x-5 gap-y-2">
             {COBERTURA.map((c) => (

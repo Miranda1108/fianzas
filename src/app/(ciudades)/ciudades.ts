@@ -129,6 +129,102 @@ export const CIUDADES: Record<string, Ciudad> = {
     keywords:
       "fianzas Tlalnepantla, fianza de cumplimiento Tlalnepantla, fianzas zona industrial Tlalnepantla, afianzadora Tlalnepantla",
   },
+  "fianzas-guadalajara": {
+    slug: "fianzas-guadalajara",
+    nombre: "Guadalajara",
+    nombreCorto: "Guadalajara",
+    metaTitle: "Fianzas en Guadalajara, Jalisco | Cotiza en 2 hrs | Fianzify",
+    metaDescription:
+      "Fianzas en Guadalajara y zona metropolitana para empresas y proveedores de gobierno. Cumplimiento, anticipo y licitación. Cotización rápida con Fianzify.",
+    heroSubtitle:
+      "Fianzas para empresas y proveedores de gobierno en Guadalajara y su zona metropolitana, con respuesta en menos de 2 horas.",
+    intro:
+      "Guadalajara es uno de los principales centros económicos del país y un mercado muy activo en licitaciones y contratos de obra. Si tu empresa participa en concursos públicos o firma contratos con dependencias en Jalisco, en Fianzify te emitimos la fianza que necesitas con respaldo de afianzadoras autorizadas por la CNSF.",
+    contexto:
+      "La zona metropolitana de Guadalajara concentra una fuerte actividad industrial, tecnológica y de construcción. Empresas de los sectores de obra pública, suministro y servicios necesitan fianzas de cumplimiento, anticipo y sostenimiento de propuesta de forma constante. Te ayudamos a tramitarlas a distancia, con la misma rapidez y acompañamiento que en cualquier otra plaza del país.",
+    zonas: [
+      "Guadalajara Centro",
+      "Zapopan",
+      "Tlaquepaque",
+      "Tonalá",
+      "Tlajomulco",
+      "El Salto",
+    ],
+    keywords:
+      "fianzas Guadalajara, fianza de cumplimiento Guadalajara, fianzas para licitaciones Jalisco, afianzadora Guadalajara",
+  },
+  "fianzas-monterrey": {
+    slug: "fianzas-monterrey",
+    nombre: "Monterrey",
+    nombreCorto: "Monterrey",
+    metaTitle: "Fianzas en Monterrey, Nuevo León | Cotiza en 2 hrs | Fianzify",
+    metaDescription:
+      "Fianzas en Monterrey y su zona metropolitana para empresas y contratistas. Cumplimiento, anticipo y licitación. Cotización en menos de 2 horas con Fianzify.",
+    heroSubtitle:
+      "Fianzas para empresas industriales y proveedores de gobierno en Monterrey y su zona metropolitana.",
+    intro:
+      "Monterrey es el principal polo industrial del norte del país. Si tu empresa firma contratos de obra, suministro o servicios, o participa en licitaciones en Nuevo León, en Fianzify te conseguimos la fianza que requieres con las mejores condiciones y emisión ágil.",
+    contexto:
+      "Con una de las economías más dinámicas de México, la zona metropolitana de Monterrey genera un alto volumen de contratos industriales y de obra, tanto privados como con el gobierno estatal y municipal. Las fianzas de cumplimiento y de anticipo son indispensables para los proveedores de la región. Te acompañamos en todo el proceso a distancia, sin que tengas que trasladarte.",
+    zonas: [
+      "Monterrey Centro",
+      "San Pedro Garza García",
+      "San Nicolás",
+      "Apodaca",
+      "Guadalupe",
+      "Santa Catarina",
+    ],
+    keywords:
+      "fianzas Monterrey, fianza de cumplimiento Monterrey, fianzas para licitaciones Nuevo León, afianzadora Monterrey",
+  },
+  "fianzas-puebla": {
+    slug: "fianzas-puebla",
+    nombre: "Puebla",
+    nombreCorto: "Puebla",
+    metaTitle: "Fianzas en Puebla | Empresas y Gobierno | Fianzify",
+    metaDescription:
+      "Fianzas en Puebla para empresas, contratistas y proveedores de gobierno. Cumplimiento, anticipo y sostenimiento de propuesta. Cotización rápida con Fianzify.",
+    heroSubtitle:
+      "Fianzas para empresas y proveedores de gobierno en Puebla, con asesoría personalizada y emisión rápida.",
+    intro:
+      "Puebla es un importante centro industrial y de servicios del centro del país. Si tu empresa participa en licitaciones o firma contratos con dependencias de gobierno en el estado, en Fianzify te ayudamos a obtener tu fianza de forma rápida y sin complicaciones.",
+    contexto:
+      "Con una sólida base industrial —automotriz, textil y manufacturera— y una intensa actividad de obra pública, Puebla es una plaza donde las fianzas de cumplimiento, anticipo y licitación son un requisito frecuente. Conocemos los procesos de las dependencias estatales y municipales, y agilizamos tu trámite a distancia.",
+    zonas: [
+      "Puebla Centro",
+      "Angelópolis",
+      "Cholula",
+      "San Andrés Cholula",
+      "Atlixco",
+      "Cuautlancingo",
+    ],
+    keywords:
+      "fianzas Puebla, fianza de cumplimiento Puebla, fianzas para licitaciones Puebla, afianzadora Puebla",
+  },
+  "fianzas-queretaro": {
+    slug: "fianzas-queretaro",
+    nombre: "Querétaro",
+    nombreCorto: "Querétaro",
+    metaTitle: "Fianzas en Querétaro | Cotiza en 2 hrs | Fianzify",
+    metaDescription:
+      "Fianzas en Querétaro para empresas industriales y proveedores de gobierno. Cumplimiento, anticipo y licitación. Cotización en menos de 2 horas con Fianzify.",
+    heroSubtitle:
+      "Fianzas para empresas y proveedores de gobierno en Querétaro, una de las plazas industriales de mayor crecimiento del país.",
+    intro:
+      "Querétaro es uno de los estados con mayor crecimiento industrial y de inversión en México. Si tu empresa firma contratos, participa en licitaciones o necesita garantizar una obligación, en Fianzify te emitimos la fianza que requieres con respaldo de afianzadoras autorizadas.",
+    contexto:
+      "Con un fuerte sector aeroespacial, automotriz y logístico, Querétaro atrae empresas que constantemente firman contratos de obra, suministro y servicios. Las fianzas de cumplimiento y de anticipo son parte esencial de su operación. Te ayudamos a tramitarlas con rapidez y acompañamiento, sin importar dónde te encuentres.",
+    zonas: [
+      "Santiago de Querétaro",
+      "El Marqués",
+      "Corregidora",
+      "Juriquilla",
+      "El Pueblito",
+      "San Juan del Río",
+    ],
+    keywords:
+      "fianzas Querétaro, fianza de cumplimiento Querétaro, fianzas para licitaciones Querétaro, afianzadora Querétaro",
+  },
 };
 
 export const CIUDAD_SLUGS = Object.keys(CIUDADES);
