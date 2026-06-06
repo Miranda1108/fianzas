@@ -7,6 +7,7 @@ import CalculadoraPrima from "@/components/CalculadoraPrima";
 import LeadFormSection from "@/components/LeadFormSection";
 import CTABanner from "@/components/UrgencySection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import SectoresSection from "@/components/SectoresSection";
 import FAQSection from "@/components/FAQSection";
 import PartnersSection from "@/components/PartnersSection";
 
@@ -22,6 +23,7 @@ export default function Home() {
       <LeadFormSection />
       <CTABanner />
       <TestimonialsSection />
+      <SectoresSection />
       <FAQSection />
       <PartnersSection />
     </>
