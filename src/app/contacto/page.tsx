@@ -107,8 +107,8 @@ export default function ContactoPage() {
                       </svg>
                     </span>
                     <div>
-                      <p className="text-xs text-gray-muted">Ubicación</p>
-                      <p className="text-sm font-medium text-navy">CDMX | Edo. de México</p>
+                      <p className="text-xs text-gray-muted">Cobertura</p>
+                      <p className="text-sm font-medium text-navy">Todo México</p>
                     </div>
                   </li>
                 </ul>

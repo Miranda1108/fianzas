@@ -184,7 +184,7 @@ export default function Footer() {
                     d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                   />
                 </svg>
-                Ciudad de México
+                Cobertura en todo México
               </li>
             </ul>
           </div>

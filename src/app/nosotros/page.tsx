@@ -2,11 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Nosotros | Fianzify | Intermediario de Fianzas CDMX",
-  description: "Conoce a Fianzify. Intermediarios especializados en fianzas para proveedores de gobierno en CDMX y Estado de México. +500 empresas apoyadas.",
+  title: "Nosotros | Fianzify | Intermediario de Fianzas en México",
+  description: "Conoce a Fianzify. Intermediarios especializados en fianzas para proveedores de gobierno en todo México. +500 empresas apoyadas.",
   openGraph: {
-    title: "Nosotros | Fianzify | Intermediario de Fianzas CDMX",
-    description: "Conoce a Fianzify. Intermediarios especializados en fianzas para proveedores de gobierno en CDMX y Estado de México. +500 empresas apoyadas.",
+    title: "Nosotros | Fianzify | Intermediario de Fianzas en México",
+    description: "Conoce a Fianzify. Intermediarios especializados en fianzas para proveedores de gobierno en todo México. +500 empresas apoyadas.",
     type: "website",
   },
 };
@@ -71,7 +71,7 @@ export default function NosotrosPage() {
             Fianzify
           </h1>
           <p className="text-white/80 text-lg max-w-2xl mx-auto">
-            Intermediarios especializados en fianzas para proveedores de gobierno en CDMX y Estado de México
+            Intermediarios especializados en fianzas para proveedores de gobierno en todo México
           </p>
         </div>
       </section>
@@ -84,7 +84,7 @@ export default function NosotrosPage() {
               ¿Quiénes somos?
             </h2>
             <p className="text-gray-text text-lg leading-relaxed mb-6">
-              En <strong>Fianzify</strong> somos un intermediario de fianzas especializado en atender a proveedores y contratistas que participan en licitaciones y contratos con dependencias de gobierno en la Ciudad de México y el Estado de México.
+              En <strong>Fianzify</strong> somos un intermediario de fianzas especializado en atender a proveedores y contratistas que participan en licitaciones y contratos con dependencias de gobierno en todo México.
             </p>
             <p className="text-gray-text text-lg leading-relaxed mb-6">
               Trabajamos con <strong>múltiples afianzadoras líderes en México</strong> para ofrecerte las mejores condiciones de aprobación, costo y tiempo de respuesta. Nuestro equipo evalúa tu perfil financiero y busca la opción que más se adapte a las necesidades de tu empresa.

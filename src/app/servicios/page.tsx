@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Servicios de Fianzas | Fianzify",
-  description: "Servicios de gestión de fianzas en Fianzify. Fianzas de cumplimiento, arrendamiento, judicial y administrativa en CDMX y Edo. Mex.",
+  description: "Servicios de gestión de fianzas en Fianzify. Fianzas de cumplimiento, arrendamiento, judicial y administrativa en todo México",
   openGraph: {
     title: "Servicios de Fianzas | Fianzify",
-    description: "Servicios de gestión de fianzas en Fianzify. Fianzas de cumplimiento, arrendamiento, judicial y administrativa en CDMX y Edo. Mex.",
+    description: "Servicios de gestión de fianzas en Fianzify. Fianzas de cumplimiento, arrendamiento, judicial y administrativa en todo México",
     type: "website",
   },
 };
