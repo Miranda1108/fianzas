@@ -3,6 +3,9 @@ import { Resend } from "resend";
 
 const TO_EMAIL = "finanzifyfianzas@gmail.com";
 
+// Vercel serverless body limit ≈ 4.5MB. Keep attachments under 4MB total.
+const MAX_TOTAL_BYTES = 4 * 1024 * 1024;
+
 const esc = (s?: string) =>
   (s ?? "").replace(/[<>&"]/g, (c) => ({
     "<": "&lt;",
@@ -18,9 +21,35 @@ const row = (label: string, value?: string) =>
   </tr>`;
 
 export async function POST(req: Request) {
-  let data: Record<string, string> = {};
+  const data: Record<string, string> = {};
+  const attachments: { filename: string; content: Buffer }[] = [];
+  let attachmentNote = "";
+
   try {
-    data = await req.json();
+    const contentType = req.headers.get("content-type") || "";
+    if (contentType.includes("multipart/form-data")) {
+      const form = await req.formData();
+      let total = 0;
+      for (const [key, value] of form.entries()) {
+        if (typeof value === "string") {
+          data[key] = value;
+        } else if (value && typeof value.arrayBuffer === "function") {
+          const file = value as File;
+          if (file.size === 0) continue;
+          total += file.size;
+          if (total > MAX_TOTAL_BYTES) {
+            attachmentNote =
+              "Algunos archivos superaron el límite de 4MB y no se adjuntaron. El cliente puede enviarlos por WhatsApp.";
+            continue;
+          }
+          const buf = Buffer.from(await file.arrayBuffer());
+          attachments.push({ filename: file.name || "documento", content: buf });
+        }
+      }
+    } else {
+      const json = await req.json();
+      Object.assign(data, json);
+    }
   } catch {
     return NextResponse.json({ ok: false, error: "Invalid payload" }, { status: 400 });
   }
@@ -39,6 +68,12 @@ export async function POST(req: Request) {
 
   const subject = `Nuevo lead · ${data.tipoFianza || "Sin especificar"}${data.nombre ? ` · ${data.nombre}` : ""}`;
 
+  const archivosRow =
+    attachments.length > 0
+      ? row("Archivos adjuntos", `${attachments.length} archivo(s)`)
+      : "";
+  const notaRow = attachmentNote ? row("Nota", attachmentNote) : "";
+
   const html = `
     <div style="font-family:Inter,Arial,sans-serif;background:#F2F4F7;padding:24px;">
       <div style="max-width:560px;margin:0 auto;background:#ffffff;border-radius:14px;overflow:hidden;border:1px solid #E2E8F0;">
@@ -54,6 +89,8 @@ export async function POST(req: Request) {
           ${row("Tipo de fianza", data.tipoFianza)}
           ${row("Monto del contrato", data.monto)}
           ${row("Mensaje", data.mensaje)}
+          ${archivosRow}
+          ${notaRow}
           ${row("Origen", data.source)}
         </table>
         <div style="padding:14px 24px;background:#F8FAFC;color:#64748B;font-size:12px;">
@@ -71,6 +108,7 @@ export async function POST(req: Request) {
       replyTo: data.email || undefined,
       subject,
       html,
+      attachments: attachments.length > 0 ? attachments : undefined,
     });
     if (error) {
       console.error("[lead] resend error:", error);

@@ -14,18 +14,24 @@ export default function LeadFormSection() {
     mensaje: "",
     website: "", // honeypot anti-spam
   });
+  const [archivos, setArchivos] = useState<File[]>([]);
+  const [enviando, setEnviando] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setEnviando(true);
 
-    // Send lead by email in the background (keepalive ensures it completes
-    // even after navigation). Don't block the user on the response.
-    fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, source: "home" }),
-      keepalive: true,
-    }).catch(() => {});
+    // Build payload — use FormData so we can attach files.
+    const fd = new FormData();
+    Object.entries(formData).forEach(([k, v]) => fd.append(k, v));
+    fd.append("source", "home");
+    archivos.forEach((f) => fd.append("archivos", f));
+
+    try {
+      await fetch("/api/lead", { method: "POST", body: fd });
+    } catch {
+      /* no bloquear al usuario si el correo falla */
+    }
 
     const message = `Hola, solicito cotización de fianza.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nTipo de fianza: ${formData.tipoFianza}\nMonto del contrato: ${formData.monto}\nMensaje: ${formData.mensaje}`;
     const encoded = encodeURIComponent(message);
@@ -172,8 +178,46 @@ export default function LeadFormSection() {
                   className="input-field resize-none"
                 />
 
-                <button type="submit" className="btn-primary w-full">
-                  Enviar solicitud &rarr;
+                {/* Adjuntar documentos */}
+                <div>
+                  <label className="flex items-center justify-center gap-2 w-full cursor-pointer border border-dashed border-gray-border hover:border-brand rounded-xl px-4 py-3.5 text-sm text-gray-muted hover:text-brand transition-colors">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                    </svg>
+                    Adjuntar documentos (opcional)
+                    <input
+                      type="file"
+                      multiple
+                      className="hidden"
+                      onChange={(e) =>
+                        setArchivos(e.target.files ? Array.from(e.target.files) : [])
+                      }
+                    />
+                  </label>
+                  {archivos.length > 0 && (
+                    <ul className="mt-2 space-y-1">
+                      {archivos.map((f, i) => (
+                        <li key={i} className="flex items-center justify-between text-xs text-gray-text bg-gray-bg rounded-lg px-3 py-1.5">
+                          <span className="truncate">{f.name}</span>
+                          <button
+                            type="button"
+                            onClick={() => setArchivos(archivos.filter((_, j) => j !== i))}
+                            className="text-gray-muted hover:text-red-500 ml-2 flex-shrink-0"
+                            aria-label="Quitar archivo"
+                          >
+                            ✕
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <p className="text-[11px] text-gray-muted mt-1.5">
+                    Cualquier formato · hasta 4 MB en total. Para archivos más pesados, envíalos por WhatsApp.
+                  </p>
+                </div>
+
+                <button type="submit" disabled={enviando} className="btn-primary w-full disabled:opacity-70">
+                  {enviando ? "Enviando…" : "Enviar solicitud →"}
                 </button>
 
                 <p className="text-xs text-gray-muted text-center mt-3 flex items-center justify-center gap-1">

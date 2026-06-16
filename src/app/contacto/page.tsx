@@ -16,17 +16,23 @@ export default function ContactoPage() {
     mensaje: "",
     website: "", // honeypot anti-spam
   });
+  const [archivos, setArchivos] = useState<File[]>([]);
+  const [enviando, setEnviando] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setEnviando(true);
 
-    // Send lead by email in background; don't block the user.
-    fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...formData, source: "contacto" }),
-      keepalive: true,
-    }).catch(() => {});
+    const fd = new FormData();
+    Object.entries(formData).forEach(([k, v]) => fd.append(k, v));
+    fd.append("source", "contacto");
+    archivos.forEach((f) => fd.append("archivos", f));
+
+    try {
+      await fetch("/api/lead", { method: "POST", body: fd });
+    } catch {
+      /* no bloquear al usuario si el correo falla */
+    }
 
     const message = `Hola, solicito información sobre fianzas.\n\nNombre: ${formData.nombre}\nEmpresa: ${formData.empresa}\nTeléfono: ${formData.telefono}\nEmail: ${formData.email}\nTipo de fianza: ${formData.tipoFianza}\nMonto: ${formData.monto}\nMensaje: ${formData.mensaje}`;
     window.open(`https://wa.me/525659957036?text=${encodeURIComponent(message)}`, "_blank");
@@ -161,8 +167,45 @@ export default function ContactoPage() {
                   <input type="text" placeholder="Monto del contrato" value={formData.monto} onChange={(e) => setFormData({ ...formData, monto: e.target.value })} className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent" />
                 </div>
                 <textarea rows={4} placeholder="Mensaje adicional (opcional)" value={formData.mensaje} onChange={(e) => setFormData({ ...formData, mensaje: e.target.value })} className="w-full px-4 py-3.5 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-brand focus:border-transparent resize-none" />
-                <button type="submit" className="w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl">
-                  Enviar información
+
+                {/* Adjuntar documentos */}
+                <div>
+                  <label className="flex items-center justify-center gap-2 w-full cursor-pointer border border-dashed border-gray-300 hover:border-brand rounded-xl px-4 py-3.5 text-sm text-gray-muted hover:text-brand transition-colors">
+                    <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="m18.375 12.739-7.693 7.693a4.5 4.5 0 0 1-6.364-6.364l10.94-10.94A3 3 0 1 1 19.5 7.372L8.552 18.32m.009-.01-.01.01m5.699-9.941-7.81 7.81a1.5 1.5 0 0 0 2.112 2.13" />
+                    </svg>
+                    Adjuntar documentos (opcional)
+                    <input
+                      type="file"
+                      multiple
+                      className="hidden"
+                      onChange={(e) => setArchivos(e.target.files ? Array.from(e.target.files) : [])}
+                    />
+                  </label>
+                  {archivos.length > 0 && (
+                    <ul className="mt-2 space-y-1">
+                      {archivos.map((f, i) => (
+                        <li key={i} className="flex items-center justify-between text-xs text-gray-text bg-gray-bg rounded-lg px-3 py-1.5">
+                          <span className="truncate">{f.name}</span>
+                          <button
+                            type="button"
+                            onClick={() => setArchivos(archivos.filter((_, j) => j !== i))}
+                            className="text-gray-muted hover:text-red-500 ml-2 flex-shrink-0"
+                            aria-label="Quitar archivo"
+                          >
+                            ✕
+                          </button>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <p className="text-[11px] text-gray-muted mt-1.5">
+                    Cualquier formato · hasta 4 MB en total. Para archivos más pesados, envíalos por WhatsApp.
+                  </p>
+                </div>
+
+                <button type="submit" disabled={enviando} className="w-full bg-brand hover:bg-brand-dark text-white font-bold py-4 rounded-full transition-all duration-300 text-lg shadow-lg hover:shadow-xl disabled:opacity-70">
+                  {enviando ? "Enviando…" : "Enviar información"}
                 </button>
                 <p className="text-xs text-gray-muted text-center">
                   Tu información está protegida. Consulta nuestro{" "}

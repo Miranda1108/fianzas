@@ -29,9 +29,9 @@ const FAQS = [
       "Con documentación completa, respondemos en menos de 2 horas y el proceso puede completarse en 24-48 horas.",
   },
   {
-    question: "¿Necesito obligado solidario?",
+    question: "¿Necesito un obligado solidario?",
     answer:
-      "Depende del monto y del perfil financiero. En algunos casos la afianzadora lo solicita como garantía adicional de recuperación. Evaluamos tu caso para darte la mejor opción.",
+      "La afianzadora define este requisito de acuerdo con el análisis financiero, el monto de la fianza y el riesgo de la operación. En determinados casos, puede solicitar un obligado solidario como respaldo adicional para fortalecer la garantía otorgada. Cada caso es evaluado de forma individual.",
   },
 ];
 
