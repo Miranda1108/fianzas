@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+// Los leads se envían directo al Gmail para máxima entrega (sin depender
+// del reenvío de ImprovMX). El correo público del sitio es contacto@fianzify.com.
 const TO_EMAIL = "finanzifyfianzas@gmail.com";
 
 // Vercel serverless body limit ≈ 4.5MB. Keep attachments under 4MB total.

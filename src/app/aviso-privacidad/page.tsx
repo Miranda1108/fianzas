@@ -67,7 +67,7 @@ export default function AvisoPrivacidadPage() {
               Usted tiene derecho a conocer qué datos personales tenemos de usted, para qué los utilizamos y las condiciones del uso que les damos (Acceso). Asimismo, es su derecho solicitar la corrección de su información personal en caso de que esté desactualizada, sea inexacta o incompleta (Rectificación); que la eliminemos de nuestros registros o bases de datos cuando considere que la misma no está siendo utilizada adecuadamente (Cancelación); así como oponerse al uso de sus datos personales para fines específicos (Oposición).
             </p>
             <p>
-              Para el ejercicio de cualquiera de los derechos ARCO, puede enviar un correo electrónico a <strong>finanzifyfianzas@gmail.com</strong>.
+              Para el ejercicio de cualquiera de los derechos ARCO, puede enviar un correo electrónico a <strong>contacto@fianzify.com</strong>.
             </p>
 
             <h2 className="font-[var(--font-heading)] text-xl font-bold text-navy mt-8">Cambios al aviso de privacidad</h2>

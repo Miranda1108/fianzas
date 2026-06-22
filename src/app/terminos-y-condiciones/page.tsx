@@ -97,7 +97,7 @@ export default function TerminosYCondicionesPage() {
             <h2 className="font-[var(--font-heading)] text-xl font-bold text-navy mt-8">9. Contacto</h2>
             <p>
               Para dudas sobre estos Términos y Condiciones, escríbenos a{" "}
-              <strong>finanzifyfianzas@gmail.com</strong>.
+              <strong>contacto@fianzify.com</strong>.
             </p>
 
             <p className="text-gray-muted text-sm mt-8">Última actualización: Mayo 2025</p>

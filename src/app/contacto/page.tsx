@@ -102,7 +102,7 @@ export default function ContactoPage() {
                     </span>
                     <div>
                       <p className="text-xs text-gray-muted">Email</p>
-                      <p className="text-sm font-medium text-navy">finanzifyfianzas@gmail.com</p>
+                      <p className="text-sm font-medium text-navy">contacto@fianzify.com</p>
                     </div>
                   </li>
                   <li className="flex items-center gap-3">
